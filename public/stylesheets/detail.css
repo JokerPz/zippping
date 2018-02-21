@@ -1,0 +1,59 @@
+	td.title{
+		color: #6c2393;
+		font-size: 12px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.text{
+		color: #434343;
+		font-size: 12px;
+		width: 245px;
+		padding:7px 25px 7px 0px;
+	}
+
+	td.name{
+		color: #434343;
+		font-size: 12px;
+		width: 160px;	
+	}
+
+	td.contact{
+		color: #434343;
+		font-size: 12px;
+		width: 200px;	
+	}
+
+	textarea{
+		color: #434343;
+		font-size: 12px;
+		margin-top: 3px;
+		padding:0px 10px 0px 0px;
+		width: 810px;
+		height: 380px;
+		max-height: 380px;
+		line-height: 24px;
+		overflow-y:auto;
+		border: none;
+	}
+
+	div.collection{
+		float: right;
+		padding-right: 50px;
+		padding-top: 25px;
+	}
+
+	div.colectitle{
+		font-size: 12px;
+		background-color:#6c2393;
+		color: white;
+		width: 70px;
+		text-align: center;
+		border-radius:5px;
+		padding: 2px 0px;
+	}
+
+	img.collect{
+		width: 14px;
+		height: 14px;
+		padding-left: 20px; 
+	}

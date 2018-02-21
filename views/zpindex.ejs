@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/nav.css">
+</head>
+
+<body style="margin: 0;padding: 0;background-color: #F2F2F2">
+<% if(loginbean==undefined){ %> 
+<div class="top1">
+	<div style="width: 1000px;height: 70px;margin: 0 auto;">
+		<img src="/images/logo_S.gif" style="
+		width: 195px;
+		height: 50px;
+		padding-top: 10px;
+		padding-left: 30px">
+
+		
+        <div class="inside" style="margin-right: 20px;border:none;color: #434343">
+            <a href="./users/login" style="color: #434343">登录</a> / 
+            <a href="./users/register" style="color: #434343">注册</a>
+        </div>
+        <div class="inside">
+			<a href="/employment/emy">我要发帖</a>
+		</div>
+
+		<div class="inside">
+			<a href="#">我的收藏</a>
+		</div>
+	</div>
+</div>
+<% }else{ %> 
+    <div class="top1">
+        <div style="width: 1000px;height: 70px;margin: 0 auto;">
+            <img src="/images/logo_S.gif" style="
+            width: 195px;
+            height: 50px;
+            padding-top: 10px;
+            padding-left: 30px">
+    
+            <div class="inside2" style="margin-right: 20px;border:none;color: #434343">
+                <a  href="#" onClick="javascript:location.href='/logout'">退出</a>
+            </div>
+    
+            <div class="inside2"><a href="/employment/emy">我要发帖</a></div>
+            <div class="inside2"><a href="/employment/eplist">我发的贴</a></div>
+            <div class="inside2"><a href="/employment/collection/list">我的收藏</a></div>
+            <div class="inside2"><a href="#" style="color: #6c2393;font-weight: 500"><%=loginbean.nicheng%></a></div>
+        </div>
+    </div>
+<% } %> 
+
+		
+
+<div class="top2">
+	<div style="width: 1000px;height: 24px;margin: 0 auto;">
+		<ul>
+			<li style="padding-left: 176px"><a href="#">首页</a></li>
+			<li><a href="#">IT互联网</a></li>
+			<li><a href="#">金融</a></li>
+			<li><a href="#">广告</a></li>
+			<li><a href="#">房地产</a></li>
+			<li><a href="#">消费品</a></li>
+			<li><a href="#">制造业</a></li>
+			<li><a href="#">其他</a></li>
+			<li style="float: right;margin-right: 20px"><a href="#">帮助</a></li>
+		</ul>
+	</div>
+</div>
+<h1  align="center">帖子列表</h1>
+<table align="center">
+  <tr>
+	<td align="center">
+	  帖子id
+	&nbsp
+	&nbsp
+	&nbsp
+	&nbsp
+	</td>
+	
+	<td align="center">
+	  帖子主题
+	</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td><td></td>
+
+  </tr>
+  <% rs.forEach(function(row){ %>
+	<tr>
+	  <td align="center">
+		<%= row['tid'] %>
+	  </td>
+	  &nbsp
+	  &nbsp
+	  &nbsp
+	  &nbsp
+	  <td align="center">
+		<a href="/employment/detail?tid=<%= row['tid'] %>" target="_blank"><%= row['title'] %></a>
+		</td>
+		<% if(loginbean!=undefined){ %>
+			<td align="center">
+				<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>">深</a>
+			</td>
+			<td align="center">
+				<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>">中</a>
+			</td>
+			<td align="center">
+				<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>">浅</a>
+			</td>
+		<% } %>
+		
+	</tr>
+  <% }) %>
+  <tr>
+	<td align="center">
+	  总共<%=count%>记录
+	  第<%=page%>/<%=countPage%>页，
+	  
+	</td>
+	<td>
+	  <% if (page!=1) { %>
+		<a href="/?page=1">首页</a>&nbsp
+		<a href="/?page=<%=(page-1)%>">上一页</a>&nbsp
+	  <% } 
+	  if (page!=countPage) { %>
+	  <a href="/?page=<%=(page+1)%>">下一页</a>&nbsp
+	  <a href="/?page=<%=countPage%>">尾页</a>&nbsp
+	  <% } %>
+	</td>
+  </tr>
+  
+</table>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+form.form-post{
+	font-size: 12px;
+	color: #515151;
+}
+
+.theme-box{
+	margin: 0 0 15px 15px;
+	width: 310px ;
+	height: 18px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+	padding-left: 5px;
+	color: #515151;
+	font-size: 12px;
+}
+
+.place-box{
+	margin: 0 0 15px 15px;
+	width: 250px ;
+	height: 18px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+	padding-left: 5px;
+	color: #515151;
+	font-size: 12px;
+}
+
+.contact-box{
+	margin: 0 0 15px 7px;
+	width: 140px ;
+	height: 18px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+	padding-left: 5px;
+	color: #515151;
+	font-size: 12px;
+}
+
+.email-box{
+	margin: 0 0 15px 7px;
+	width: 190px ;
+	height: 18px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+	padding-left: 5px;
+	color: #515151;
+	font-size: 12px;
+}
+
+.trade-select{
+	width: 100px;
+	height: 20px;
+	font-size: 12px;
+	color: #515151;
+	padding: auto;
+	margin-left: 15px;
+	border: 1px solid #A1A1A1 ;
+}
+
+.date{
+	width: 140px;
+	height: 20px;
+	font-size: 12px;
+	font-family: arial;
+	color: #515151;
+	padding-left: 5px;
+	margin-left: 15px;
+	border: 1px solid #A1A1A1;
+}
+
+.time-select{
+	width: 40px;
+	height: 20px;
+	font-size: 12px;
+	color: #515151;
+	padding: auto;
+	margin-left: 8px;
+	margin-right: 8px;
+	border: 1px solid #A1A1A1;
+}
+
+.time2-select{
+	width: 40px;
+	height: 20px;
+	font-size: 12px;
+	color: #515151;
+	padding: auto;
+	margin-left: 25px;
+	margin-right: 8px;
+	border: 1px solid #A1A1A1;
+}
+
+.content{
+	color: #515151;
+	font-size: 12px;
+	line-height: 24px;
+	width: 780px;
+	height: 400px;
+	max-height: 400px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px; 
+	margin-left: 15px;
+	border: 1px solid #A1A1A1;
+	border-radius: 5px ;
+	overflow-y:auto;
+}
+
+.check-box{
+	width: 14px;
+	height: 14px;
+	vertical-align:middle;
+}
+
+.rule{
+	font-size: 12px ;
+	color: #515151 ;
+	font-family: "Arial" ;	
+	text-decoration: none;
+}
+
+.post{
+	margin-left: 15px;
+	margin-right: 30px;
+	width: 100px;
+	font-size: 13px;
+	color: #434343;
+}

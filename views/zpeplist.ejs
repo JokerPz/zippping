@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <% rs.forEach(function(row){ %>
+        <tr>
+          <!-- <td align="center">
+            <%= row['tid'] %>
+          </td> -->
+          &nbsp
+          &nbsp
+          &nbsp
+          &nbsp
+          <td align="center">
+            <a href="/employment/detail?tid=<%= row['tid'] %>" target="_blank"><%= row['title'] %></a>
+          </td>
+        </tr></br>
+      <% }) %>
+</body>
+</html>

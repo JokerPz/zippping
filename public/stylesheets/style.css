@@ -1,0 +1,161 @@
+/* body 默认 padding margin 不为0 */
+.login-main {
+	margin: 0 ;
+	padding: 0 ; 
+}
+
+.login-title {
+	background-color: #8DC21F;
+	height: 25px;
+	/* 存在缩放的问题*/
+	padding: 0 0 0 80%;
+	/*padding: 0 0 0 900px; */
+/*	position: relative;
+	right: 80px;*/
+}
+
+.login-title_word {
+	font-family: "Arial";
+	font-size: 12px;
+	color: #fff ;
+	text-decoration: none;	
+}
+
+
+.login-icon {
+	margin: 125px auto 0;
+	width: 691px ;
+	height: 177px ;
+	
+}
+
+
+.login-word {
+	width: 286px;
+	height: 100px;
+	/*padding: 2px ;*/
+	margin: 47px auto 0;
+	font-size: 12px ;
+	color: #515151 ;
+	font-family: "Arial" ;
+	text-align: center ;
+	/*border:2px solid;*/
+}
+
+.login-box {
+	margin: 0 0 15px 15px;
+	width: 240px ;
+	height: 20px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+}
+
+.login-sub_but {
+	text-align: right;
+}
+
+.login-submit {
+	width: 55px;
+	height: 22px;
+	border: solid 1px;	
+	border-radius: 5px ;
+	color: #fff ;
+	background-color: #6e3d97 ;
+}
+
+
+.login-button {
+	width: 55px;
+	height: 22px;
+	border: solid 1px;	
+	border-radius: 5px ;
+	color: #fff ;
+	background-color: #93c644 ;
+}
+
+
+
+.register-icon {
+	margin: 95px auto 0;
+	width: 537px ;
+	height: 92px ;	
+}
+
+
+.register-top {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0 auto;
+	/*border:2px solid;*/
+}
+
+
+.register-word {
+	margin: 47px auto 0 365px;
+	font-size: 12px ;
+	color: #515151 ;
+	font-family: "Arial" ;
+	/*border:2px solid;*/
+}
+
+.register-name {
+	margin: 70px 0 15px 25px;
+	width: 140px ;
+	height: 20px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+
+}
+
+.register-box {
+	margin: 0 0 15px 25px;
+	width: 220px ;
+	height: 20px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;	
+}
+
+
+.register-code {
+	margin: 0 0 15px 12px;
+	width: 80px ;
+	height: 20px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;
+}
+
+
+.register-br {
+	margin: 0;
+	width: 270px ;
+}
+
+
+.register-cbox {
+	margin: 15px 0 0 50px;
+	width: 10px;
+	height: 10px;
+}
+
+.register-rule {
+	font-size: 12px ;
+	color: #515151 ;
+	font-family: "Arial" ;	
+	text-decoration: none;
+}
+
+.register-submit {
+	/*padding: 2px;	*/
+	margin: 15px 0 0 50px;
+	width: 80px;
+	height: 22px;
+	border: solid 1px;
+	border-radius: 5px ;
+	color: #fff ;
+	background-color: #5F1985 ;	
+}
+
+.register-tip {
+	color: #AEAEAE;
+	margin: 0 0 0 15px;
+}

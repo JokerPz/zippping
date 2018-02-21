@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/style.css">
+    <title>注册</title>
+</head>
+<body class="login-main">
+    <div class="login-title">
+        <a href="../index.html" class="login-title_word">首页</a>
+        &nbsp;<a class="login-title_word">|</a>&nbsp;
+        <a href="help.html" class="login-title_word">帮助</a>
+    </div>
+
+
+    <div class="register-top">
+        
+       <div class="register-icon">
+         <img src="/images/Bzippper_S.png" width="30%" height="30%">
+       </div>
+
+        <div  class="register-word">
+
+        <form  method="post" action="./register">
+        <!-- for和id绑定，type指定输入框类型，name用于后台 -->
+        <label for="niname">昵称</label>
+        <input type="text" name="nicheng" id="niname" class="register-name">
+        <br/>
+        <label for="acc">账号</label>
+        <input type="text" name="email" id="acc" class="register-box">
+        <br/>
+        <label for="pwd">密码</label>
+        <input type="password" name="pwd" id="pwd" class="register-box">
+        <br/>
+        <label for="cd">验证码</label>
+        <input type="text" name="code" id="cd" class="register-code">
+        <hr class="register-br">
+        <!-- <br/> -->
+        <input type="checkbox" id="cbox" class="register-cbox" checked="checked">
+        <label for="cbox">已同意</label>
+        <a href="rules.html" class="register-rule">《Zippping管理规定》</a>
+        <br/>
+        <input type="hidden" name="subflag" value="1"/>
+        <input type="submit" name="loginfo" value="注册" class="register-submit">
+        <a href="login.html" class="register-tip">已注册账号？</a>
+        </form>          
+        
+        </div>
+
+    </div>
+
+
+</body>
+</html>
