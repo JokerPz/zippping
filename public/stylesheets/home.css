@@ -1,0 +1,72 @@
+	td.title-theme{
+		color: #6c2393;
+		font-size: 12px;
+		width: 368px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.title-type{
+		color: #90c31f;
+		font-size: 12px;
+		width: 70px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.title-time{
+		color: #90c31f;
+		font-size: 12px;
+		width: 120px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.title-place{
+		color: #90c31f;
+		font-size: 12px;
+		width: 180px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.title-collect{
+		color: #90c31f;
+		font-size: 12px;
+		padding: 7px 15px 7px 10px;
+	}
+
+	td.text-theme{
+		color: #515151;
+		font-size: 12px;
+		width: 368px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.text-type{
+		color: #515151;
+		font-size: 12px;
+		width: 70px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.text-time{
+		color: #515151;
+		font-size: 12px;
+		width: 120px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.text-place{
+		color: #515151;
+		font-size: 12px;
+		width: 180px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	td.text-collect{
+		color: #515151;
+		font-size: 12px;
+		padding: 7px 15px 7px 0px;
+	}
+
+	a.home-title{
+		text-decoration: none;
+		color: #515151;
+	}

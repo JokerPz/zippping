@@ -1,0 +1,62 @@
+/* 收藏样式 */
+input[type="radio"]+label::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 100%;
+	padding: 0 auto;
+	margin: 0 10px;
+}
+
+.purple-box+label::before {
+	border: solid 1px #601986 ; 
+}
+
+.purple-box:checked+label::before {
+	background: #601986 ;
+}
+
+
+.green-box+label::before {
+	border: solid 1px #94C744 ; 
+}
+
+.green-box:checked+label::before {
+	background: #94C744 ;
+}
+
+
+.gray-box+label::before {
+	border: solid 1px #6B6B6B ; 
+}
+
+.gray-box:checked+label::before {
+	background: #6B6B6B ;
+}
+
+.purple-box {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+.green-box {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+.gray-box {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+div.colec{
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 100%;
+	padding: 0 auto;
+	margin: 0 10px;
+	border: solid 1px #AEAEAE; 
+}
