@@ -4,6 +4,8 @@
 	<meta charset="utf-8"/>
 	<title>首页</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/nav.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/collection.css">
 </head>
 
 <body style="margin: 0;padding: 0;background-color: #F2F2F2">
@@ -54,7 +56,6 @@
 <% } %> 
 
 		
-
 <div class="top2">
 	<div style="width: 1000px;height: 24px;margin: 0 auto;">
 		<ul>
@@ -70,73 +71,64 @@
 		</ul>
 	</div>
 </div>
-<h1  align="center">帖子列表</h1>
-<table align="center">
-  <tr>
-	<td align="center">
-	  帖子id
-	&nbsp
-	&nbsp
-	&nbsp
-	&nbsp
-	</td>
-	
-	<td align="center">
-	  帖子主题
-	</td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td><td></td>
 
-  </tr>
-  <% rs.forEach(function(row){ %>
-	<tr>
-	  <td align="center">
-		<%= row['tid'] %>
-	  </td>
-	  &nbsp
-	  &nbsp
-	  &nbsp
-	  &nbsp
-	  <td align="center">
-		<a href="/employment/detail?tid=<%= row['tid'] %>" target="_blank"><%= row['title'] %></a>
-		</td>
-		<% if(loginbean!=undefined){ %>
+<div style="background-color: #fff;width: 1000px;height: 620px;margin: 0 auto;">
+
+	<table style="padding-left: 50px;padding-top: 8px;">
+			<tr>
+				<td class="title-theme">主题</td>
+				<td class="title-type">活动类型</td>
+				<td class="title-time">时间</td>
+				<td class="title-place">地点</td>
+				<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
+			</tr>
+	</table>
+
+	<% rs.forEach(function(row){ %>
+	<table style="padding-left: 50px;">
+			<tr>
+				<td class="text-theme">
+					<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
+				</td>
+				<td class="text-type">宣讲/招聘</td>
+				<td class="text-time">2018/03/07 19:00</td>
+				<td class="text-place">深圳大学科技楼1号报告厅</td>
+				<% if(loginbean!=undefined){ %>
+				<td class="text-collect">
+					<ul>
+						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+					</ul>
+				</td>
+				<% } %>
+			</tr>
+	</table>
+	<hr class="hr1">
+	<% }) %>
+	<table style="padding-left: 50px;" align="center">
+		<tr>
 			<td align="center">
-				<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>">深</a>
+			  总共<%=count%>记录
+			  第<%=page%>/<%=countPage%>页，
+			  
 			</td>
-			<td align="center">
-				<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>">中</a>
+			<td>
+			  <% if (page!=1) { %>
+				<a href="/?page=1">首页</a>&nbsp
+				<a href="/?page=<%=(page-1)%>">上一页</a>&nbsp
+			  <% } 
+			  if (page!=countPage) { %>
+			  <a href="/?page=<%=(page+1)%>">下一页</a>&nbsp
+			  <a href="/?page=<%=countPage%>">尾页</a>&nbsp
+			  <% } %>
 			</td>
-			<td align="center">
-				<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>">浅</a>
-			</td>
-		<% } %>
-		
-	</tr>
-  <% }) %>
-  <tr>
-	<td align="center">
-	  总共<%=count%>记录
-	  第<%=page%>/<%=countPage%>页，
-	  
-	</td>
-	<td>
-	  <% if (page!=1) { %>
-		<a href="/?page=1">首页</a>&nbsp
-		<a href="/?page=<%=(page-1)%>">上一页</a>&nbsp
-	  <% } 
-	  if (page!=countPage) { %>
-	  <a href="/?page=<%=(page+1)%>">下一页</a>&nbsp
-	  <a href="/?page=<%=countPage%>">尾页</a>&nbsp
-	  <% } %>
-	</td>
-  </tr>
-  
-</table>
+		</tr>
+	</table>
+	<hr class="hr1">
+	 
+</div>
+
 </body>
 
 </html>
