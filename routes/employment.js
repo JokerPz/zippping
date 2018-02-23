@@ -10,7 +10,7 @@ router.all('/emy',function(req,res){//发帖路由
         return;
     }
     if(subflag==undefined){
-        res.render('emy');
+        res.render('zpemy');
     }
     else{
         employmentmodel.emy(req,res)

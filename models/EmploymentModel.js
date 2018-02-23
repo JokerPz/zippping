@@ -4,9 +4,9 @@ var async=require('async')
 var moment = require('moment')
 module.exports={
     emy:function(req,res){
-        let year = moment(req.body['date']).format('YYYY');
-        let month = moment(req.body['date']).format('MM')
-        let day = moment(req.body['date']).format('DD');
+        var year = moment(req.body['date']).format('YYYY');
+        var month = moment(req.body['date']).format('MM')
+        var day = moment(req.body['date']).format('DD');
         var e_type;
         if(req.body["type1"]!=undefined&&req.body['type2']!=undefined){
             e_type = '宣讲,面试'
@@ -55,7 +55,7 @@ module.exports={
                     page=1;
                 }
             }
-            pageSize=20;//每页显示多少条帖子
+            pageSize=15;//每页显示多少条帖子
             pointStart=(page-1)*pageSize;
             count=0;//****************** */
             countPage=0;//************* */

@@ -3,7 +3,7 @@ module.exports = (function(){
     var pool = mysql.createPool({     
         host: 'localhost',       //主机 
         user: 'root',               //MySQL认证用户名 
-        password: 'Zippping_0903',        //MySQL认证用户密码 
+        password: '123456',        //MySQL认证用户密码 
         database: 'zipping', 
         port: '3306'                   //端口号 
     }); 
