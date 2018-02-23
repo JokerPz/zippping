@@ -1,25 +1,44 @@
 var connPool = require("./ConnPool");
 var LoginBean=require("../jsbean/LoginBean")
 var async=require('async')
+var moment = require('moment')
 module.exports={
     emy:function(req,res){
+        let year = moment(req.body['date']).format('YYYY');
+        let month = moment(req.body['date']).format('MM')
+        let day = moment(req.body['date']).format('DD');
+        var e_type;
+        if(req.body["type1"]!=undefined&&req.body['type2']!=undefined){
+            e_type = '宣讲,面试'
+        }else if(req.body["type1"]!=undefined&&req.body['type2']==undefined){
+            e_type = '宣讲'
+        }else if(req.body["type1"]==undefined&&req.body['type2']!=undefined){
+            e_type = '面试'
+        }else{
+            e_type = '-'
+        }
+        console.log(e_type);
         loginbean = req.session.loginbean;
+        console.log(req.body['type'])
+        console.log(req.body['type1'])//
         pool = connPool();
         pool.getConnection(function(err,conn){
             if(err){
                 res.send('获取链接错误，错误原因：'+err.message);
             }
             var userAddSql='insert into employment (title,content,uid,place,business,type,year,month,day,hour,minute,name,phone,email,wechat,QQ,createtime)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp)';
-            var param=[req.body['title'],req.body['content'],loginbean.id,req.body['place'],req.body['business'],req.body['type'],req.body['year'],req.body['month'],req.body['day'],req.body['hour'],req.body['minute'],req.body['name'],req.body['phone'],req.body['email'],req.body['wechat'],req.body['QQ']]
+            var param=[req.body['title'],req.body['content'],loginbean.id,req.body['place'],req.body['business'],e_type,year,month,day,req.body['hour'],req.body['minute'],req.body['name'],req.body['phone'],req.body['email'],req.body['wechat'],req.body['QQ']]
             conn.query(userAddSql,param,function(err,rs){
                 if(err){
-                    //console.log('insert err:',err.message);
-                    //res.send("数据库错误,错误原因:"+err.message);
+                    console.log('insert err:',err.message);
+                    res.send("数据库错误,错误原因:"+err.message);
                     return;
                 }
                 res.send('<script>alert("提问成功");location.href="../";</script>');
                 // res.redirect('../');
             })
+            
+            
             conn.release();
         })
     },
@@ -36,7 +55,7 @@ module.exports={
                     page=1;
                 }
             }
-            pageSize=6;//每页显示多少条帖子
+            pageSize=20;//每页显示多少条帖子
             pointStart=(page-1)*pageSize;
             count=0;//****************** */
             countPage=0;//************* */
@@ -97,7 +116,7 @@ module.exports={
                 var sqldetail='select tid,title,content,place,business,type,year,month,day,hour,minute,name,phone,email,wechat,QQ,updtime,createtime from employment where tid=?'
                 var sqlparam=[tid];
                 conn.query(sqldetail,sqlparam,function(err,rs){
-                    res.render('detail',{rs:rs})
+                    res.render('zpdetail',{rs:rs})
                 })
                 conn.release();
             })

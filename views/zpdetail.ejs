@@ -1,0 +1,72 @@
+<% include zpheader.ejs %>
+
+<div style="background-color: #fff;width: 1000px;height: 620px;margin: 0 auto;">
+
+	<div class="collection">
+		<ul>
+			<li><div class="colectitle">分色收藏</div></li>
+			<li><input type="radio" value="purple" id="purple" name="collect" class="purple-box">
+			<label for="purple"></label></li>
+			<li><input type="radio" value="green" id="green" name="collect" class="green-box">
+			<label for="green"></label></li>
+			<li><input type="radio" value="gray" id="gray" name="collect" class="gray-box">
+			<label for="gray"></label></li>
+		</ul>
+	</div>
+	
+	<table style="padding-left: 50px;padding-top: 18px;">
+		<tr>
+			<td class="title">招聘主题</td>
+			<td class="text"><%= rs[0].title%></td>
+			<td class="title">信息编号</td>
+			<td class="text">A201801200354</td>
+		</tr>
+
+		<tr>
+			<td class="title">活动地点</td>
+			<td class="text"><%= rs[0].place%></td>
+			<td class="title">所处行业</td>
+			<td class="text"><%= rs[0].business%></td>
+		</tr>
+
+		<tr>
+			<td class="title">活动类型</td>
+			<td class="text"><%= rs[0].type%></td>
+			<td class="title">活动时间</td>
+			<td class="text"><%= rs[0].year%>/<%= rs[0].month%>/<%= rs[0].day%>  <%= rs[0].hour%>:<%= rs[0].minute%></td>
+		</tr>
+	</table>
+
+	<hr style="width: 900px;padding: 0 auto;background-color: #AEAEAE;height: 1px;border: none;">
+
+	<table style="padding-left: 50px;">
+		<tr>
+			<td class="title" valign="top">活动内容</td>
+			<td>
+			<textarea><%- rs[0].content%></textarea>
+			</td>
+		</tr>
+	</table>
+
+	<hr style="width: 900px;padding: 0 auto;background-color: #AEAEAE;height: 1px;border: none;">
+	
+	<table style="padding-left: 50px;">
+		<tr>
+			<td class="title">联系方式</td>
+			<td class="name">名称：<%= rs[0].name%></td>
+			<td class="contact">电话：<%= rs[0].phone%></td>
+			<td class="contact">邮箱：<%= rs[0].email%></td>
+		</tr>
+
+		<tr>
+			<td class="title"></td>
+			<td class="name">微信：<%= rs[0].wechat%></td>
+			<td class="contact">QQ：<%= rs[0].QQ%></td>
+		</tr>
+	</table>
+
+</div>
+
+</body>
+
+</html>
