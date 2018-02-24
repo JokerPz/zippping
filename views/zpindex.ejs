@@ -12,16 +12,16 @@
 				<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
 			</tr>
 	</table>
-
-	<% rs.forEach(function(row){ %>
+<% if(rs!=undefined){ 
+	rs.forEach(function(row){ %>
 	<table style="padding-left: 50px;">
 			<tr>
 				<td class="text-theme">
 					<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
 				</td>
-				<td class="text-type">宣讲/招聘</td>
-				<td class="text-time">2018/03/07 19:00</td>
-				<td class="text-place">深圳大学科技楼1号报告厅</td>
+				<td class="text-type"><%= row['type']%></td>
+				<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
+				<td class="text-place"><%= row['place']%></td>
 				<% if(loginbean!=undefined){ %>
 				<td class="text-collect">
 					<ul>
@@ -34,7 +34,8 @@
 			</tr>
 	</table>
 	<hr class="hr1">
-	<% }) %>
+	<% })
+} %>
 	<table style="padding-left: 50px;" align="center">
 		<tr>
 			<td align="center">

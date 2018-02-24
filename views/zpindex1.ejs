@@ -59,76 +59,77 @@
 <div class="top2">
 	<div style="width: 1000px;height: 24px;margin: 0 auto;">
 		<ul>
-			<li style="padding-left: 176px"><a href="#">首页</a></li>
-			<li><a href="#">IT互联网</a></li>
-			<li><a href="#">金融</a></li>
-			<li><a href="#">广告</a></li>
-			<li><a href="#">房地产</a></li>
-			<li><a href="#">消费品</a></li>
-			<li><a href="#">制造业</a></li>
-			<li><a href="#">其他</a></li>
+			<li style="padding-left: 176px"><a href="/">首页</a></li>
+			<li><a href="/?business=IT互联网">IT互联网</a></li>
+			<li><a href="/?business=金融">金融</a></li>
+			<li><a href="/?business=广告">广告</a></li>
+			<li><a href="/?business=房地产">房地产</a></li>
+			<li><a href="/?business=消费品">消费品</a></li>
+			<li><a href="/?business=制造业">制造业</a></li>
+			<li><a href="/?business=其他">其他</a></li>
 			<li style="float: right;margin-right: 20px"><a href="#">帮助</a></li>
 		</ul>
 	</div>
 </div>
 
 <div style="background-color: #fff;width: 1000px;height: 620px;margin: 0 auto;">
-
-	<table style="padding-left: 50px;padding-top: 8px;">
+	
+		<table style="padding-left: 50px;padding-top: 8px;">
+				<tr>
+					<td class="title-theme">主题</td>
+					<td class="title-type">活动类型</td>
+					<td class="title-time">时间</td>
+					<td class="title-place">地点</td>
+					<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
+				</tr>
+		</table>
+	<% if(rs!=undefined){ 
+		rs.forEach(function(row){ %>
+		<table style="padding-left: 50px;">
+				<tr>
+					<td class="text-theme">
+						<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
+					</td>
+					<td class="text-type"><%= row['type']%></td>
+					<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
+					<td class="text-place"><%= row['place']%></td>
+					<% if(loginbean!=undefined){ %>
+					<td class="text-collect">
+						<ul>
+							<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+							<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+							<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+						</ul>
+					</td>
+					<% } %>
+				</tr>
+		</table>
+		<hr class="hr1">
+		<% })
+	} %>
+		<table style="padding-left: 50px;" align="center">
 			<tr>
-				<td class="title-theme">主题</td>
-				<td class="title-type">活动类型</td>
-				<td class="title-time">时间</td>
-				<td class="title-place">地点</td>
-				<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
-			</tr>
-	</table>
-
-	<% rs.forEach(function(row){ %>
-	<table style="padding-left: 50px;">
-			<tr>
-				<td class="text-theme">
-					<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
+				<td align="center">
+				  总共<%=count%>记录
+				  第<%=page%>/<%=countPage%>页，
+				  
 				</td>
-				<td class="text-type">宣讲/招聘</td>
-				<td class="text-time">2018/03/07 19:00</td>
-				<td class="text-place">深圳大学科技楼1号报告厅</td>
-				<% if(loginbean!=undefined){ %>
-				<td class="text-collect">
-					<ul>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
-					</ul>
+				<td>
+				  <% if (page!=1) { %>
+					<a href="/?page=1">首页</a>&nbsp
+					<a href="/?page=<%=(page-1)%>">上一页</a>&nbsp
+				  <% } 
+				  if (page!=countPage) { %>
+				  <a href="/?page=<%=(page+1)%>">下一页</a>&nbsp
+				  <a href="/?page=<%=countPage%>">尾页</a>&nbsp
+				  <% } %>
 				</td>
-				<% } %>
 			</tr>
-	</table>
-	<hr class="hr1">
-	<% }) %>
-	<table style="padding-left: 50px;" align="center">
-		<tr>
-			<td align="center">
-			  总共<%=count%>记录
-			  第<%=page%>/<%=countPage%>页，
-			  
-			</td>
-			<td>
-			  <% if (page!=1) { %>
-				<a href="/?page=1">首页</a>&nbsp
-				<a href="/?page=<%=(page-1)%>">上一页</a>&nbsp
-			  <% } 
-			  if (page!=countPage) { %>
-			  <a href="/?page=<%=(page+1)%>">下一页</a>&nbsp
-			  <a href="/?page=<%=countPage%>">尾页</a>&nbsp
-			  <% } %>
-			</td>
-		</tr>
-	</table>
-	<hr class="hr1">
-	 
-</div>
-
-</body>
-
-</html>
+		</table>
+		<hr class="hr1">
+		 
+	</div>
+	
+	</body>
+	
+	</html>

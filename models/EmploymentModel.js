@@ -59,10 +59,19 @@ module.exports={
             pointStart=(page-1)*pageSize;
             count=0;//****************** */
             countPage=0;//************* */
-            var countSql='select count(tid) from employment'
-            var listSql = 'select tid,title,updtime,createtime from employment order by createtime desc limit ?,?';   
-            var param = [pointStart,pageSize];   
-           
+            
+            if(req.query['business']==undefined){
+                var countSql='select count(tid) from employment'
+                var listSql = 'select tid,title,type,place,year,month,day,hour,minute,updtime,createtime from employment order by createtime desc limit ?,?';  
+                var param = [pointStart,pageSize];
+            }else{
+                //console.log(req.query['business'])
+                console.log(req.query['business'])
+                var countSql='select count(tid) from employment where business ="'+req.query['business']+'"'
+                var listSql = 'select tid,title,type,place,year,month,day,hour,minute,updtime,createtime from employment where business="'+req.query['business']+'" order by createtime desc limit ?,?';  
+                var param = [pointStart,pageSize];
+                
+            }
             async.series({
                 one:function(callback){
                     conn.query(countSql,[],function(err,rs){ 
@@ -73,6 +82,7 @@ module.exports={
                             pointStart=(page-1)*pageSize;
 
                         }
+                       // console.log("count:"+count)
                         param = [pointStart,pageSize]
                         callback(null,rs)
                     })   
@@ -88,6 +98,7 @@ module.exports={
                 // count=(results['one'][0]['count(*)'])
                 // countPage=Math.ceil(count/pageSize)
                 rs=(results['two'])
+                console.log(rs)
                 //res.render('zpindex', { title: 'Express',loginbean:loginbean,rs:rs,count:count,countPage:countPage,page:page});
                 if(req.session.loginbean==undefined){
                     res.render('zpindex', { title: 'Express',loginbean:loginbean,rs:rs,count:count,countPage:countPage,page:page});
@@ -214,4 +225,3 @@ module.exports={
         })
     }
 }
-// 
