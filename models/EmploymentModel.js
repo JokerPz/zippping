@@ -162,12 +162,12 @@ module.exports={
             if(req.query['business']==undefined){
                 var countSql='select count(tid) from employment where uid=?'
                 var countparam=[uid]
-                var sqllist='select tid,title,type,place,year,month,day,hour,minute,updtime,createtime from employment where uid=? order by tid desc limit ?,?'
+                var sqllist='select tid,title,type,place,year,month,day,hour,minute,updtime,createtime,business from employment where uid=? order by tid desc limit ?,?'
                 var listparam=[uid,pointStart,pageSize]
             }else{
                 var countSql='select count(tid) from employment where uid=? and business ="'+req.query['business']+'"'
                 var countparam=[uid]
-                var sqllist='select tid,title,type,place,year,month,day,hour,minute,updtime,createtime from employment where uid=? and business ="'+req.query['business']+'" order by tid desc limit ?,?'
+                var sqllist='select tid,title,type,place,year,month,day,hour,minute,updtime,createtime,business from employment where uid=? and business ="'+req.query['business']+'" order by tid desc limit ?,?'
                 var listparam=[uid,pointStart,pageSize]
             }
 
@@ -232,7 +232,20 @@ module.exports={
                         }
                         // console.log(rs)
                     })
-                    res.redirect('/?page='+req.query['page'])
+                    switch(req.query['back']){
+                        case '0':
+                            res.redirect('/?page='+req.query['page']);
+                            break;
+                        case '1':
+                            res.redirect('/?page='+req.query['page']+'&business='+req.query['business']);
+                        case '2':
+                        res.redirect('/employment/eplist?page='+req.query['page']);
+                            break;
+                        case '3':
+                            res.redirect('/employment/eplist?page='+req.query['page']+'&business='+req.query['business']);
+                    }
+                    console.log("back:"+req.query['back'])
+                   // res.redirect('/?page='+req.query['page'])
                     //res.send('数据表存在记录')
                 }
                 else{
@@ -246,7 +259,21 @@ module.exports={
                         }
                         // console.log(rs)
                     })
-                    res.redirect('/?page='+req.query['page'])
+                    console.log("back:"+req.query['back'])
+                    switch(req.query['back']){
+                        case '0':
+                            res.redirect('/?page='+req.query['page']);
+                            break;
+                        case '1':
+                            res.redirect('/?page='+req.query['page']+'&business='+req.query['business']);
+                            break;
+                        case '2':
+                            res.redirect('/employment/eplist?page='+req.query['page']);
+                            break;
+                        case '3':
+                            res.redirect('/employment/eplist?page='+req.query['page']+'&business='+req.query['business']);
+
+                    }
                     //res.send('数据表不存在记录')
                 }
             })
@@ -310,7 +337,7 @@ module.exports={
                 }
             },function(err,results){
                 rs=(results['two'])
-                res.render('zpeplist',{title:'Express',loginbean:loginbean,rs:rs,count:count,countPage:countPage,page:page,business:req.query['business'],web:2})
+                res.render('zpeplist',{title:'Express',loginbean:loginbean,rs:rs,count:count,countPage:countPage,page:page,business:req.query['business'],web:2})//web用于发帖列表与收藏列表的翻页条件区别
             })
             conn.release();
         })
