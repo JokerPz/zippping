@@ -1,25 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <% rs.forEach(function(row){ %>
-        <tr>
-          <!-- <td align="center">
-            <%= row['tid'] %>
-          </td> -->
-          &nbsp
-          &nbsp
-          &nbsp
-          &nbsp
-          <td align="center">
-            <a href="/employment/detail?tid=<%= row['tid'] %>" target="_blank"><%= row['title'] %></a>
-          </td>
-        </tr></br>
-      <% }) %>
+<% include zpepheader.ejs %>
+
+
+<div style="background-color: #fff;width: 1000px;height: 620px;margin: 0 auto;">
+
+	<table style="padding-left: 50px;padding-top: 8px;">
+			<tr>
+				<td class="title-theme">主题</td>
+				<td class="title-type">活动类型</td>
+				<td class="title-time">时间</td>
+				<td class="title-place">地点</td>
+				<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
+			</tr>
+	</table>
+<% if(rs!=undefined){ 
+	rs.forEach(function(row){ %>
+	<table style="padding-left: 50px;">
+			<tr>
+				<td class="text-theme">
+					<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
+				</td>
+				<td class="text-type"><%= row['type']%></td>
+				<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
+				<td class="text-place"><%= row['place']%></td>
+				<% if(loginbean!=undefined){ %>
+				<td class="text-collect">
+					<ul>
+						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>"><li><div class="colec"></div></li></a>
+					</ul>
+				</td>
+				<% } %>
+			</tr>
+	</table>
+	<hr class="hr1">
+	<% })
+} %>
+	<table style="padding-left: 50px;font-size:12px;color:#515151" align="center">
+		<% if(web==1){%>
+		<tr>
+			<% if(business==undefined){ %>
+			<td align="center">
+			  总共<%=count%>记录
+			  第<%=page%>/<%=countPage%>页&nbsp
+			  
+			</td>
+			<td>
+			  <% if (page!=1) { %>
+				<a href="/employment/eplist?page=1">首页</a>&nbsp
+				<a href="/employment/eplist?page=<%=(page-1)%>">上一页</a>&nbsp
+			  <% } 
+			  if (page!=countPage) { %>
+				<a href="/employment/eplist?page=<%=(page+1)%>">下一页</a>&nbsp
+				<a href="/employment/eplist?page=<%=countPage%>">尾页</a>&nbsp
+			  <% } %>
+			</td>
+			<% }else{ %>
+			<td align="center">
+				总共<%=count%>记录
+				第<%=page%>/<%=countPage%>页&nbsp
+			
+			</td>
+			<td>
+			 <% if (page!=1) { %>
+				<a href="/employment/eplist?page=1&business=<%=business%>">首页</a>&nbsp
+				<a href="/employment/eplist?page=<%=(page-1)%>&business=<%=business%>">上一页</a>&nbsp
+			 <% } 
+			 if (page!=countPage) { %>
+				<a href="/employment/eplist?page=<%=(page+1)%>&business=<%=business%>">下一页</a>&nbsp
+				<a href="/employment/eplist?page=<%=countPage%>&business=<%=business%>">尾页</a>&nbsp
+			 <% } %>
+			</td>
+			<% } %>
+		</tr>
+		<% }else if(web==2){ %>
+		<tr>
+			<% if(business==undefined){ %>
+			<td align="center">
+				总共<%=count%>记录
+				第<%=page%>/<%=countPage%>页&nbsp
+				
+			</td>
+			<td>
+				<% if (page!=1) { %>
+				<a href="/employment/collection/list?page=1">首页</a>&nbsp
+				<a href="/employment/collection/list?page=<%=(page-1)%>">上一页</a>&nbsp
+				<% } 
+				if (page!=countPage) { %>
+				<a href="/employment/collection/list?page=<%=(page+1)%>">下一页</a>&nbsp
+				<a href="/employment/collection/list?page=<%=countPage%>">尾页</a>&nbsp
+				<% } %>
+			</td>
+			<% }else{ %>
+			<td align="center">
+				总共<%=count%>记录
+				第<%=page%>/<%=countPage%>页&nbsp
+				
+			</td>
+			<td>
+				<% if (page!=1) { %>
+				<a href="/employment/collection/list?page=1&business=<%=business%>">首页</a>&nbsp
+				<a href="/employment/collection/list?page=<%=(page-1)%>&business=<%=business%>">上一页</a>&nbsp
+				<% } 
+				if (page!=countPage) { %>
+				<a href="/employment/collection/list?page=<%=(page+1)%>&business=<%=business%>">下一页</a>&nbsp
+				<a href="/employment/collection/list?page=<%=countPage%>&business=<%=business%>">尾页</a>&nbsp
+				<% } %>
+			</td>
+			<% } %>
+		</tr>
+		<% } %>
+		
+	</table>
+	<hr class="hr1">
+	 
+</div>
+
 </body>
+
 </html>
