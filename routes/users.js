@@ -32,7 +32,7 @@ router.all('/register', function(req, res) {
     if(req.body['agree']!=undefined){
       userModel.zhuce(req,res,svg)
     }else{
-      res.send("<script> alert('请阅读zippping管理规定');history.back();</script>")
+      res.send("<script> alert('请阅读Zippping管理规定');history.back();</script>")
       return
     }
     
