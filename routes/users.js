@@ -25,16 +25,17 @@ router.all('/register', function(req, res) {
   if(subflag==undefined){
     var captcha = svgCaptcha.create({width:150,height:20,fontSize:27});
     svg = captcha.text;
-    console.log(captcha.text)
-    
-    // var svg = captcha.data;
-    // console.log(captcha.data)
     res.type('html');
     res.render('zpregister',{svg:captcha.data});
   }
   else{
-    console.log("后台的验证码:"+svg)
-    userModel.zhuce(req,res,svg)
+    if(req.body['agree']!=undefined){
+      userModel.zhuce(req,res,svg)
+    }else{
+      res.send("<script> alert('请阅读zippping管理规定');history.back();</script>")
+      return
+    }
+    
   }
   
 });
