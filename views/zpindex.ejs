@@ -8,7 +8,11 @@
 				<td class="title-type">活动类型</td>
 				<td class="title-time">时间</td>
 				<td class="title-place">地点</td>
-				<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
+				<% if(loginbean==undefined){ %>
+				<td class="title-collect" style="color: #AEAEAE">&nbsp收藏</td>
+				<% }else{ %>
+				<td class="title-collect" style="color: #6c2393">&nbsp收藏</td>
+				<% } %>
 			</tr>
 	</table>
 <% if(rs!=undefined){ 

@@ -9,18 +9,18 @@ module.exports={
         var day = moment(req.body['date']).format('DD');
         var e_type;
         if(req.body["type1"]!=undefined&&req.body['type2']!=undefined){
-            e_type = '宣讲,面试'
+            e_type = '宣讲,招聘'
         }else if(req.body["type1"]!=undefined&&req.body['type2']==undefined){
             e_type = '宣讲'
         }else if(req.body["type1"]==undefined&&req.body['type2']!=undefined){
-            e_type = '面试'
+            e_type = '招聘'
         }else{
             e_type = '-'
         }
         console.log(e_type);
         loginbean = req.session.loginbean;
-        console.log(req.body['type'])
-        console.log(req.body['type1'])//
+        // console.log(req.body['type'])
+        // console.log(req.body['type1'])
         pool = connPool();
         pool.getConnection(function(err,conn){
             if(err){
@@ -42,7 +42,7 @@ module.exports={
             conn.release();
         })
     },
-    emyList:function(req,res,loginbean){//返回帖子首页列表
+    emyList:function(req,res,loginbean){//帖子首页列表
         pool=connPool();
         pool.getConnection(function(err,conn){
             if(err){
@@ -64,20 +64,20 @@ module.exports={
 
             if(req.query['business']==undefined&&req.session.loginbean==undefined){
                 var countSql='select count(tid) from employment where status=1'
-                var listSql = 'select tid,title,type,place,year,month,day,hour,minute,updtime,createtime,business from employment where status=1 order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE DESC limit ?,?';  
+                var listSql = 'select tid,title,type,place,year,month,day,hour,minute,updtime,createtime,business from employment where status=1 order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE limit ?,?';  
                 var param = [pointStart,pageSize];
             }else if(req.query['business']!=undefined&&req.session.loginbean==undefined){
                 var countSql='select count(tid) from employment  where status=1 and business ="'+req.query['business']+'"'
-                var listSql = 'select tid,title,type,place,year,month,day,hour,minute,updtime,createtime,business from employment where status=1 and business="'+req.query['business']+'" order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE DESC limit ?,?';
+                var listSql = 'select tid,title,type,place,year,month,day,hour,minute,updtime,createtime,business from employment where status=1 and business="'+req.query['business']+'" order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE  limit ?,?';
                 var param = [pointStart,pageSize];
                 
             }else if(req.query['business']==undefined&&req.session.loginbean!=undefined){
                 var countSql='select count(tid) from employment where status=1'
-                var listSql = 'select e.tid,e.title,e.type,e.place,e.year,e.month,e.day,e.hour,e.minute,e.updtime,e.createtime,e.business,c.cid from employment e left join collection c on e.tid=c.tid and c.uid ='+req.session.loginbean.id+' where e.status=1 order by e.MONTH*1000000+e.DAY*10000+e.HOUR*100+e.MINUTE DESC limit ?,?';  
+                var listSql = 'select e.tid,e.title,e.type,e.place,e.year,e.month,e.day,e.hour,e.minute,e.updtime,e.createtime,e.business,c.cid from employment e left join collection c on e.tid=c.tid and c.uid ='+req.session.loginbean.id+' where e.status=1 order by e.MONTH*1000000+e.DAY*10000+e.HOUR*100+e.MINUTE limit ?,?';  
                 var param = [pointStart,pageSize];
             }else{
                 var countSql='select count(tid) from employment  where status=1 and business ="'+req.query['business']+'"'
-                var listSql = 'select e.tid,e.title,e.type,e.place,e.year,e.month,e.day,e.hour,e.minute,e.updtime,e.createtime,e.business,c.cid from employment e left join collection c on e.tid=c.tid and c.uid ='+req.session.loginbean.id+' where e.status=1 and e.business="'+req.query['business']+'" order by e.MONTH*1000000+e.DAY*10000+e.HOUR*100+e.MINUTE DESC limit ?,?';
+                var listSql = 'select e.tid,e.title,e.type,e.place,e.year,e.month,e.day,e.hour,e.minute,e.updtime,e.createtime,e.business,c.cid from employment e left join collection c on e.tid=c.tid and c.uid ='+req.session.loginbean.id+' where e.status=1 and e.business="'+req.query['business']+'" order by e.MONTH*1000000+e.DAY*10000+e.HOUR*100+e.MINUTE limit ?,?';
                 console.log(listSql)  
                 var param = [pointStart,pageSize];
             }
@@ -339,13 +339,13 @@ module.exports={
             if(req.query['business']==undefined){
                 var countSql = 'select count(cid) from collection where uid=?'
                 var countparam=[uid]
-                var sqllist='select tid,title,type,year,month,day,hour,minute,place,createtime from collection where uid=? order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE desc limit ?,?'
+                var sqllist='select tid,title,type,year,month,day,hour,minute,place,createtime from collection where uid=? order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE limit ?,?'
                 var listparam=[uid,pointStart,pageSize]
             }else{
                 var countSql = 'select count(cid) from collection where uid=? and business = "'+req.query['business']+'"'
                 
                 var countparam=[uid]
-                var sqllist='select tid,title,type,year,month,day,hour,minute,place,createtime from collection where uid=? and business="'+req.query['business']+'" order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE desc limit ?,?'
+                var sqllist='select tid,title,type,year,month,day,hour,minute,place,createtime from collection where uid=? and business="'+req.query['business']+'" order by MONTH*1000000+DAY*10000+HOUR*100+MINUTE limit ?,?'
                 var listparam=[uid,pointStart,pageSize]
             }   
             
