@@ -1,0 +1,27 @@
+td.data_title1{
+	font-size: 12px;
+	color: #6c2393;
+	padding-bottom: 12px;
+}
+
+td.data_title2{
+	font-size: 12px;
+	color: #515151;
+	padding-bottom: 12px;
+}
+
+td.data1{
+	font-size: 12px;
+	color: #6c2393;
+	padding-left: 10px;
+	padding-right: 50px;
+	padding-bottom: 12px;
+}
+
+td.data2{
+	font-size: 12px;
+	color: #515151;
+	padding-left: 10px;
+	padding-right: 50px;
+	padding-bottom: 12px;
+}

@@ -1,28 +1,28 @@
 	td.title-theme{
 		color: #6c2393;
 		font-size: 12px;
-		width: 368px;
+		width: 310px;
 		padding: 7px 15px 7px 0px;
 	}
 
 	td.title-type{
 		color: #90c31f;
 		font-size: 12px;
-		width: 70px;
+		width: 65px;
 		padding: 7px 15px 7px 0px;
 	}
 
 	td.title-time{
 		color: #90c31f;
 		font-size: 12px;
-		width: 120px;
+		width: 112px;
 		padding: 7px 15px 7px 0px;
 	}
 
 	td.title-place{
 		color: #90c31f;
 		font-size: 12px;
-		width: 180px;
+		width: 245px;
 		padding: 7px 15px 7px 0px;
 	}
 
@@ -35,28 +35,28 @@
 	td.text-theme{
 		color: #515151;
 		font-size: 12px;
-		width: 368px;
+		width: 310px;
 		padding: 7px 15px 7px 0px;
 	}
 
 	td.text-type{
 		color: #515151;
 		font-size: 12px;
-		width: 70px;
+		width: 65px;
 		padding: 7px 15px 7px 0px;
 	}
 
 	td.text-time{
 		color: #515151;
 		font-size: 12px;
-		width: 120px;
+		width: 112px;
 		padding: 7px 15px 7px 0px;
 	}
 
 	td.text-place{
 		color: #515151;
 		font-size: 12px;
-		width: 180px;
+		width: 235px;
 		padding: 7px 15px 7px 0px;
 	}
 
@@ -66,7 +66,41 @@
 		padding: 7px 15px 7px 0px;
 	}
 
+	td.text-auditor{
+		font-size: 12px;
+		color: #515151;
+		padding: 7px 15px 7px 0px;
+	}
+
 	a.home-title{
 		text-decoration: none;
 		color: #515151;
+	}
+
+	a.exam-checked{
+		color: #fff;
+		font-size: 12px;
+		padding: 2px 12px;
+		background-color: #6c2393;
+		border-radius: 5px;
+		text-decoration: none;
+	}
+
+	a.exam-unchecked{
+		color: #515151;
+		font-size: 12px;
+		padding: 2px 12px;
+		text-decoration: none;
+	}
+
+	input.exam-submit{
+		float: right;
+		font-size: 12px;
+		color: #fff;
+		background-color: #90c31f;
+		border-radius: 5px;
+		padding: 2px 20px;
+		border: none;
+		margin-right: 50px;
+		margin-top: 12px;
 	}

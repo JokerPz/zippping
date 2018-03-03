@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="\stylesheets\nav.css">
+	<link rel="stylesheet" type="text/css" href="\stylesheets\home.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/detail.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/post.css">
+	<link rel="stylesheet" type="text/css" href="\stylesheets\collection.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/images/logo_ico.ico">  
+</head>
+
+<body style="margin: 0;padding: 0;background-color: #F2F2F2">
+<% if(loginbean==undefined){ %> 
+<div class="top1">
+    <div style="width: 1000px;height: 70px;margin: 0 auto;">
+        <img src="/images/logo_S.gif" style="
+        width: 195px;
+        height: 50px;
+        padding-top: 10px;
+        padding-left: 30px">
+
+        
+        <div class="inside" style="margin-right: 20px;border:none;color: #434343">
+            <a href="/users/login" style="color: #434343">登录</a> / 
+            <a href="/users/register" style="color: #434343">注册</a>
+        </div>
+        <div class="inside">
+            <a href="/employment/emy">我要发帖</a>
+        </div>
+
+        <div class="inside">
+            <a href="#">我的收藏</a>
+        </div>
+    </div>
+</div>
+<% }else{ %> 
+<div class="top1">
+	<div style="width: 1000px;height: 70px;margin: 0 auto;">
+		<img src="/images/logo_S.gif" style="
+		width: 195px;
+		height: 50px;
+		padding-top: 10px;
+		padding-left: 30px">
+
+		<div class="inside3" style="margin-right: 20px;border:none;color: #434343">
+			<a href="/logout">退出</a>
+		</div>
+
+		<div class="inside3"><a href="/employment/emy">发帖</a></div>
+		<div class="inside3"><a href="/employment/eplist">已发</a></div>
+		<div class="inside3"><a href="/employment/collection/list">收藏</a></div>
+		<div class="inside3"><a href="#">数据</a></div>
+		<div class="inside3"><a href="#">管理</a></div>
+		<div class="inside3"><a href="/administrator/examine/wait">审核</a></div>
+		<div class="inside3"><a href="#" style="color: #6c2393;"><%=loginbean.nicheng%></a></div>
+	</div>
+</div>
+<% } %> 
+<div class="top2">
+	<div style="width: 1000px;height: 24px;margin: 0 auto;">
+		<ul>
+			<li style="padding-left: 176px"><a href="/">首页</a></li>
+			<li><a href="/?business=IT互联网">IT互联网</a></li>
+			<li><a href="/?business=金融">金融</a></li>
+			<li><a href="/?business=广告">广告</a></li>
+			<li><a href="/?business=房地产">房地产</a></li>
+			<li><a href="/?business=消费品">消费品</a></li>
+			<li><a href="/?business=制造业">制造业</a></li>
+			<li><a href="/?business=其他">其他</a></li>
+			<li style="float: right;margin-right: 20px"><a href="#">帮助</a></li>
+		</ul>
+	</div>
+</div>

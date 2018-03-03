@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">       
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo_ico.ico">  
     <title>注册</title>
 </head>
 <body class="login-main">
@@ -24,14 +25,17 @@
         <form  method="post" action="./register">
         <!-- for和id绑定，type指定输入框类型，name用于后台 -->
         <label for="niname">昵称</label>
-        <input type="text" name="nicheng" id="niname" class="register-name">
+        <input type="text" name="nicheng" id="niname" class="register-name" required autofocus placeholder=" 6~12个数字或字母" pattern="^[A-Za-z0-9]{6,12}$" oninvalid="setCustomValidity('请输入6~12个数字或字母')" oninput="setCustomValidity('')">
         <br/>
         <label for="acc">账号</label>
-        <input type="text" name="email" id="acc" class="register-box">
+        <input type="text" name="email" id="acc" class="register-box" required placeholder=" 6~12个数字或字母" pattern="^[A-Za-z0-9]{6,12}$" oninvalid="setCustomValidity('请输入6~12个数字或字母')" oninput="setCustomValidity('')">
         <br/>
         <label for="pwd">密码</label>
-        <input type="password" name="pwd" id="pwd" class="register-box">
+        <input type="password" name="pwd" id="pwd" class="register-box" required placeholder=" 不少于6个字符" pattern="^.{6,}$" oninvalid="setCustomValidity('请输入至少6个字符')" oninput="setCustomValidity('')">
         <br/>
+        <label for="pwd">再次输入</label>
+        <input type="password" name="repasswd" id="repwd" class="register-re_box" required placeholder=" 不少于6个字符" pattern="^.{6,}$" oninvalid="setCustomValidity('请输入至少6个字符')" oninput="setCustomValidity('')" onblur="if (this.value!=this.form.pwd.value) { alert('两次输入的密码不一致！')}">
+        <br/> 
         <label for="cd">验证码 </label>
         <input type="text" name="svg" id="cd" class="register-code"><a href="/users/register"><%- svg %></a>
         <hr class="register-br" style="margin-bottom: 15px;">

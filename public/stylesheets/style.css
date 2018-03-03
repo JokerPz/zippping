@@ -92,7 +92,7 @@
 
 
 .register-word {
-	margin: 47px auto 0 365px;
+	margin: 10px auto 0 365px;
 	font-size: 12px ;
 	color: #515151 ;
 	font-family: "Arial" ;
@@ -101,22 +101,29 @@
 
 .register-name {
 	margin: 70px 0 15px 25px;
-	width: 130px ;
+	width: 140px ;
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
-	padding: 0 5px;
+
 }
 
 .register-box {
 	margin: 0 0 15px 25px;
-	width: 210px ;
+	width: 220px ;
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
-	border-radius: 5px ;
-	padding: 0 5px;
+	border-radius: 5px ;	
 }
 
+
+.register-re_box {
+	margin: 0 0 15px 1px;
+	width: 220px ;
+	height: 20px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;		
+}
 
 .register-code {
 	margin: 0 0 15px 12px;
@@ -124,21 +131,25 @@
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
-	padding: 0 5px;
 }
 
+.register-txt_ver {
+	margin: 0 0 0 15px;
+	border: 1px solid #A1A1A1 ;
+}
 
-.register-br {
-	margin: 0;
+.register-hr {
+	/* 考虑兼容性*/
+	margin: 0px;  /*Chrome Firefox*/
+ 	text-align: center; /*IE Edge Opera*/
 	width: 270px ;
 }
 
 
 .register-cbox {
-	margin-left: 50px;
-	width: 14px;
-	height: 14px;
-	vertical-align:middle;
+	margin: 15px 0 0 50px;
+	width: 10px;
+	height: 10px;
 }
 
 .register-rule {

@@ -10,10 +10,20 @@ router.all('/emy',function(req,res){//发帖路由
         return;
     }
     if(subflag==undefined){
-        res.render('zpemy');
+        if(req.session.loginbean.privilige==1){
+            res.render('zpemy_admin');
+        }else{
+            res.render('zpemy');
+        }
+        
     }
     else{
-        employmentmodel.emy(req,res)
+        if(req.body['agree']!=undefined){
+            employmentmodel.emy(req,res)
+        }else{
+            res.send("<script> alert('请阅读Zippping管理规定');history.back();</script>")
+            return
+        }
     }
 })
 
@@ -50,6 +60,19 @@ router.get('/collection/list',function(req,res){
     }else{
         employmentmodel.collectionList(req,res)
     }
+})
+
+router.get('/collection/del',function(req,res){
+    loginbean=checksession.check(req,res)
+    if(!loginbean){
+        return
+    }else{
+        employmentmodel.collectionDel(req,res)
+    }
+})
+
+router.post('/aaa',function(req,res){
+    res.send('已收藏')
 })
 
 
