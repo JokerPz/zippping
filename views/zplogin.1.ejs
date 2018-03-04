@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo_ico.ico">  
+    <title>Zippping</title>
+</head>
+<body class="login-main">
+    <div class="login-title">
+        <a href="/" class="login-title_word">首页</a>
+        &nbsp;<a class="login-title_word">|</a>&nbsp;
+        <a href="help.html" class="login-title_word">帮助</a>
+    </div>
+
+	<div class="login-icon">
+    <img src="/images/logo_L.png" width="100%" height="100%">
+    </div>
+    <div class="login-word">
+        <form method="post" action="./login">
+            <!-- for和id绑定，type指定输入框类型，name用于后台 -->
+            <label for="acc">账号</label><!-- &emsp; -->
+            <input type="text" name="email" id="acc" class="login-box">
+            <!-- <br/><br/> -->
+            <label for="pwd">密码</label><!-- &emsp; -->
+            <input type="password" name="pwd" id="pwd" class="login-box">  
+            <div class="login-sub_but">
+                <input type="hidden" name="subflag" value="1"/>
+                <input type="submit" name="loginfo" value="登陆" class="login-submit">
+                <input type="button" name="register" value="注册" class="login-button" onclick="window.location.href='./register'" >
+            </div>
+        </form>          
+    </div>
+
+
+</body>
+</html>

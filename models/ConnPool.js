@@ -4,7 +4,7 @@ module.exports = (function(){
         host: 'localhost',       //主机 
         user: 'root',               //MySQL认证用户名 
         password: 'Zippping_0903',        //MySQL认证用户密码 
-        database: 'zipping', 
+        database: 'zippping', 
         port: '3306'                   //端口号 
     }); 
     pool.on('connection', function(connection) {  

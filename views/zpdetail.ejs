@@ -4,20 +4,22 @@
 
 	<div class="collection">
 		<ul>
-			<li><div class="colectitle">收藏</div></li>
-			<%if(loginbean!=undefined){
-				if(!rs[0].cid){%>
+			<%if(loginbean!=undefined){%>
+				<li><div class="colectitle">收藏</div></li>
+				<%if(!rs[0].cid){%>
+				
 				<label  for="one-box" >         
-					<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= rs[0].tid %>&rank=1&title=<%= rs[0].title %>&type=<%=rs[0].type %>&year=<%= rs[0].year%>&month=<%= rs[0].month %>&day=<%= rs[0].day%>&hour=<%= rs[0].hour %>&minute=<%= rs[0].minute%>&place=<%= rs[0].place%>&business=<%=rs[0].business%>&back=6';"> 
+					<img style="margin-right:10px;" alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= rs[0].tid %>&rank=1&title=<%= rs[0].title %>&type=<%=rs[0].type %>&year=<%= rs[0].year%>&month=<%= rs[0].month %>&day=<%= rs[0].day%>&hour=<%= rs[0].hour %>&minute=<%= rs[0].minute%>&place=<%= rs[0].place%>&business=<%=rs[0].business%>&back=6';"> 
 				</label> 
 				<%}else{%>
 				<label  for="one-box" >         
-					<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=rs[0].tid%>&back=6';"> 
+					<img style="margin-right:10px;" alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=rs[0].tid%>&back=6';"> 
 				</label>
 				<%} 
 			}else{%>
+				<li><div class="colectitle" style="background-color:#AEAEAE;">收藏</div></li>
 				<label  for="one-box" >         
-					<img  alt="初始" src="/images/Star_S_2.png" id="checkimg" onclick="black_star()"> 
+					<img style="margin-right:10px;" alt="初始" src="/images/Star_S_2.png" id="checkimg" onclick="black_star()"> 
 				</label>
 			<%}%>
 		</ul>

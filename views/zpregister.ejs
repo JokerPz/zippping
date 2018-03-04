@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">       
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/post.css">
     <link rel="shortcut icon" type="image/x-icon" href="/images/logo_ico.ico">  
     <title>Zippping</title>
 </head>
@@ -25,22 +26,22 @@
         <form  method="post" action="./register">
         <!-- for和id绑定，type指定输入框类型，name用于后台 -->
         <label for="niname">昵称</label>
-        <input type="text" name="nicheng" id="niname" class="register-name" required autofocus placeholder=" 6~12个数字或字母" pattern="^[A-Za-z0-9]{6,12}$" oninvalid="setCustomValidity('请输入6~12个数字或字母')" oninput="setCustomValidity('')">
+        <input type="text" name="nicheng" id="niname" class="register-name" required autofocus pattern="^{1,8}$" oninvalid="setCustomValidity('少于8个字符')" oninput="setCustomValidity('')">
         <br/>
         <label for="acc">账号</label>
-        <input type="text" name="email" id="acc" class="register-box" required placeholder=" 6~12个数字或字母" pattern="^[A-Za-z0-9]{6,12}$" oninvalid="setCustomValidity('请输入6~12个数字或字母')" oninput="setCustomValidity('')">
+        <input type="text" name="email" id="acc" class="register-box" required placeholder=" 不少于6个字符" pattern="^[A-Za-z0-9]{6,12}$" oninvalid="setCustomValidity('请输入6~12个数字或字母')" oninput="setCustomValidity('')">
         <br/>
         <label for="pwd">密码</label>
-        <input type="password" name="pwd" id="pwd" class="register-box" required placeholder=" 不少于6个字符" pattern="^.{6,}$" oninvalid="setCustomValidity('请输入至少6个字符')" oninput="setCustomValidity('')">
+        <input type="password" name="pwd" id="pwd" class="register-box" required placeholder=" 不少于6个字符" pattern="^.{6,18}$" oninvalid="setCustomValidity('请输入6~18个字符')" oninput="setCustomValidity('')">
         <br/>
         <label for="pwd">再次输入</label>
-        <input type="password" name="repasswd" id="repwd" class="register-re_box" required placeholder=" 不少于6个字符" pattern="^.{6,}$" oninvalid="setCustomValidity('请输入至少6个字符')" oninput="setCustomValidity('')" onblur="if (this.value!=this.form.pwd.value) { alert('两次输入的密码不一致！')}">
+        <input type="password" name="repasswd" id="repwd" class="register-re_box" required placeholder=" 不少于6个字符" pattern="^.{6,}$"  onblur="if (this.value!=this.form.pwd.value) { alert('两次输入的密码不一致！')}">
         <br/> 
         <label for="cd">验证码 </label>
         <input type="text" name="svg" id="cd" class="register-code"><a href="/users/register"><%- svg %></a>
         <hr class="register-hr" style="width: 275px;">
         <!-- <br/> -->
-        <input type="checkbox" id="cbox" class="register-cbox" name="agree" value="1">
+        <input type="checkbox" id="cbox" class="check-box" style="margin-left: 51px;" name="agree" value="1">
         <label for="cbox">已同意</label>
         <a href="#" class="register-rule">《Zippping管理规定》</a>
         <br/>

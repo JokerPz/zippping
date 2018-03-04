@@ -105,7 +105,7 @@
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
-
+	padding-left: 5px ;
 }
 
 .register-box {
@@ -113,7 +113,8 @@
 	width: 220px ;
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
-	border-radius: 5px ;	
+	border-radius: 5px ;
+	padding-left: 5px ;	
 }
 
 
@@ -122,7 +123,8 @@
 	width: 220px ;
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
-	border-radius: 5px ;		
+	border-radius: 5px ;
+	padding-left: 5px ;
 }
 
 .register-code {
@@ -131,6 +133,7 @@
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
+	padding-left: 5px ;
 }
 
 .register-txt_ver {
@@ -146,7 +149,7 @@
 	color: #AEAEAE; */
 	margin:0;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	background-color: #AEAEAE;
 	height: 1px;
 	border: none;
@@ -180,4 +183,21 @@
 .register-tip {
 	color: #AEAEAE;
 	margin: 0 0 0 15px;
+}
+
+::-webkit-input-placeholder { /* WebKit,Chrome, Blink, Edge */
+    color:    #AEAEAE;
+    font-size: 11px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #AEAEAE;
+	font-size: 11px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #AEAEAE;
+	font-size: 11px;   
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color:    #AEAEAE;
+	font-size: 11px;
 }

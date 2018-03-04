@@ -12,7 +12,7 @@
 				<% if(web==1){ %>
 				<td class="title-collect" style="color: #90c31f">审核状态</td>
 				<% } else if(web ==2){%>
-					<td class="title-collect" style="color: #6c2393">&nbsp收藏</td>
+					<td class="title-collect" style="color: #6c2393;padding-left: 30px;">收藏</td>
 				<% } %>
 			</tr>
 	</table>
@@ -27,47 +27,45 @@
 			<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
 			<td class="text-place"><%= row['place']%></td>
 			<% if(loginbean!=undefined){ %>
-			<td class="text-collect">
-				<% if(web==1){ %>
-					<%if(!business){%>
-					<ul>
-						<!-- <a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=2"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=2"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=2"><li><div class="colec"></div></li></a> -->
-						<%if(row['status']==0){%>
-							<span class="text-type" style="padding-left:20px;">等待审核</span>
-						<%}else if(row['status']==1){%>
-							<span class="text-type" style="padding-left:20px;">审核通过</span>
-						<%}else if(row['status']==-1){%>
-							<span class="text-type" style="padding-left:20px;color:#c53333 ">审核失败</span>
-						<% } %>
-					</ul>
-					<% }else{ %>
-					<ul>	
-						<%if(row['status']==0){%>
-							<span class="text-type" style="padding-left:20px;">等待审核</span>
-						<%}else if(row['status']==1){%>
-							<span class="text-type" style="padding-left:20px;">审核通过</span>
-						<%}else if(row['status']==-1){%>
-							<span class="text-type" style="padding-left:20px;color:#c53333 ">审核失败</span>
-						<% } %>
-
-						
-					</ul>
+			
+			<% if(web==1){ %>
+			<td class="text-collect" style="padding-left:5px;">
+				<%if(!business){%>
+				<ul>
+					<%if(row['status']==0){%>
+						<span class="text-type" style="padding-left:5px;">等待审核</span>
+					<%}else if(row['status']==1){%>
+						<span class="text-type" style="padding-left:5px;">审核通过</span>
+					<%}else if(row['status']==-1){%>
+						<span class="text-type" style="padding-left:5px;color:#c53333 ">审核失败</span>
 					<% } %>
-				<% }else if(web==2) {%>
-					<%if(business==undefined){%>
-					<label  for="one-box" >           
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&back=4'">
-					</label>
-					<% }else{ %>
-					<label  for="one-box" >           
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&business=<%= business%>&back=5'">
-					</label>
+				</ul>
+				<% }else{ %>
+				<ul>	
+					<%if(row['status']==0){%>
+						<span class="text-type">等待审核</span>
+					<%}else if(row['status']==1){%>
+						<span class="text-type">审核通过</span>
+					<%}else if(row['status']==-1){%>
+						<span class="text-type" style="color:#c53333 ">审核失败</span>
 					<% } %>
-
+				</ul>
+			</td>
+			<% } %>
+			<% }else if(web==2) {%>
+			<td class="text-collect" style="padding-left: 33.5px;">
+				<%if(business==undefined){%>
+				<label  for="one-box" >           
+					<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&back=4'">
+				</label>
+				<% }else{ %>
+				<label  for="one-box" >           
+					<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&business=<%= business%>&back=5'">
+				</label>
 				<% } %>
 			</td>
+			<% } %>
+			
 			<% } %>
 		</tr>
 	</table>
@@ -79,9 +77,9 @@
 		<tr>
 		<%if(count!=0){%>
 			<% if(business==undefined){ %>
-			<td align="center">
-			  总共<%=count%>记录
-			  第<%=page%>/<%=countPage%>页&nbsp
+			<td align="center" style="padding: 8px 0;">
+			  总共&nbsp<%=count%>&nbsp记录&nbsp
+			  第&nbsp<%=page%>/<%=countPage%>&nbsp页&nbsp
 			  
 			</td>
 			<td>
@@ -94,26 +92,11 @@
 				<a href="/employment/eplist?page=<%=countPage%>">尾页</a>&nbsp
 			  <% } %>
 			</td>
-			<% }else{ %>
-			<td align="center">
-				总共<%=count%>记录
-				第<%=page%>/<%=countPage%>页&nbsp
-			
-			</td>
-			<td>
-			 <% if (page!=1) { %>
-				<a href="/employment/eplist?page=1&business=<%=business%>">首页</a>&nbsp
-				<a href="/employment/eplist?page=<%=(page-1)%>&business=<%=business%>">上一页</a>&nbsp
-			 <% } 
-			 if (page!=countPage) { %>
-				<a href="/employment/eplist?page=<%=(page+1)%>&business=<%=business%>">下一页</a>&nbsp
-				<a href="/employment/eplist?page=<%=countPage%>&business=<%=business%>">尾页</a>&nbsp
-			 <% } %>
-			</td>
 			<% } %>
+			
 		<%}else{%>
 			<td align="center" style="font-size:12px;color:#515151">
-				总共<%=count%>记录
+				暂无记录
 			</td>
 		<%}%>
 		</tr>
@@ -121,9 +104,9 @@
 		<tr>
 		<%if(count!=0){%>
 			<% if(business==undefined){ %>
-			<td align="center">
-				总共<%=count%>记录
-				第<%=page%>/<%=countPage%>页&nbsp
+			<td align="center" style="padding: 8px 0;">
+				总共&nbsp<%=count%>&nbsp记录&nbsp
+				第&nbsp<%=page%>/<%=countPage%>&nbsp页&nbsp
 			</td>
 			<td>
 				<% if (page!=1) { %>
@@ -135,26 +118,11 @@
 				<a href="/employment/collection/list?page=<%=countPage%>">尾页</a>&nbsp
 				<% } %>
 			</td>
-			<% }else{ %>
-			<td align="center">
-				总共<%=count%>记录
-				第<%=page%>/<%=countPage%>页&nbsp
-				
-			</td>
-			<td>
-				<% if (page!=1) { %>
-				<a href="/employment/collection/list?page=1&business=<%=business%>">首页</a>&nbsp
-				<a href="/employment/collection/list?page=<%=(page-1)%>&business=<%=business%>">上一页</a>&nbsp
-				<% } 
-				if (page!=countPage) { %>
-				<a href="/employment/collection/list?page=<%=(page+1)%>&business=<%=business%>">下一页</a>&nbsp
-				<a href="/employment/collection/list?page=<%=countPage%>&business=<%=business%>">尾页</a>&nbsp
-				<% } %>
-			</td>
 			<% } %>
+			
 		<%}else{%>
 			<td align="center" style="font-size:12px;color:#515151">
-				总共<%=count%>记录
+				暂无记录
 			</td>
 		<%}%>
 		</tr>

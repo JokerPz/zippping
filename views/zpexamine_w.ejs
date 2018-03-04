@@ -15,8 +15,7 @@
                 height: 50px;
                 padding-top: 10px;
                 padding-left: 30px">
-        
-                
+
                 <div class="inside" style="margin-right: 20px;border:none;color: #434343">
                     <a href="./users/login" style="color: #434343">登录</a> / 
                     <a href="./users/register" style="color: #434343">注册</a>
@@ -76,12 +75,13 @@
 				<td><a href="/administrator/examine/pass" class="exam-unchecked">通过审核</a></td>
 				<td><a href="/administrator/examine/fail" class="exam-unchecked">审核失败</a></td>
 			</tr>
-	</table>
+    </table>
 
 	<div>
-		<table style="padding-left: 50px;">
-        <% if(rs!=undefined){ 
-            rs.forEach(function(row){ %>
+    <% if(rs!=undefined){ 
+        rs.forEach(function(row){ %>    
+        <table style="padding-left: 50px;">
+        
             <tr>
                 <td class="text-theme">
                     <a class="home-title" href="/administrator/examine/wait/detail?&tid=<%= row['tid']%>"><%= row['title'] %></a>
@@ -90,10 +90,13 @@
                 <td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
                 <td class="text-place"><%= row['place']%></td>
             </tr>
-            <% })
-        } %>
+            
+        
         </table>
+
         <hr class="hr1">
+         <% })
+    } %>
         <table style="padding-left: 50px;font-size:12px;" align="center">
             <tr>
             <%if(count!=0){%>
@@ -137,7 +140,9 @@
             <%}%>
             </tr>
         </table>
+
         <hr class="hr1">
+
 	</div>
 	 
 </div>

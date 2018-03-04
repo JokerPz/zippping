@@ -78,10 +78,10 @@
 			</tr>
 	</table>
 
-	<div>
-		<table style="padding-left: 50px;">
-        <% if(rs!=undefined){ 
-            rs.forEach(function(row){ %>
+	<div>	
+    <% if(rs!=undefined){ 
+        rs.forEach(function(row){ %>
+        <table style="padding-left: 50px;">        
             <tr>
                 <td class="text-theme">
                     <a class="home-title" href="/administrator/examine/wait/detail?&tid=<%= row['tid']%>"><%= row['title'] %></a>
@@ -91,10 +91,11 @@
                 <td class="text-place"><%= row['place']%></td>
                 <td class="text-auditor">审核人：<%= row['handler']%></td>
             </tr>
-            <% })
-        } %>
+           
         </table>
         <hr class="hr1">
+        <% })
+    } %>
         <table style="padding-left: 50px;font-size:12px;" align="center">
             <tr>
             <%if(count!=0){%>
