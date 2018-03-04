@@ -62,16 +62,10 @@ module.exports={
                     loginbean.privilige= rs[0].privilige;
                     req.session.loginbean = loginbean; 
                     res.redirect('/')
-                    // if(loginbean.privilige==0){
-                    //     res.redirect('/') 
-                    // }else if(loginbean.privilige==1){
-                    //     res.redirect('/administrator')
-                    // }
-                    // res.send('登录成功'); 
                     
                     
                 }else{   
-                    res.send("email/密码错误");   
+                    res.send('<script>alert("账号/密码错误,请重新输入");location.href="http://localhost:3000/users/login";</script>')  
                 }   
             })   
             conn.release();

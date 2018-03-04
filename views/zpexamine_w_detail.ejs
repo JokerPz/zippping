@@ -125,33 +125,36 @@
 			<td class="contact">QQ：<%= rs[0].QQ%></td>
         </tr>
         <% if(rs[0].status==0){ %>
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">
+        <!-- wait page -->
+        <form method="post" action="/administrator/examine/wait/result?tid=<%=rs[0].tid %>">
             <input type="hidden" name="status" value="3"/>
             <input type="submit" value="删除" class="exam-gray">
         </form>
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">
+        <form method="post" action="/administrator/examine/wait/result?tid=<%=rs[0].tid %>">
             <input type="hidden" name="status" value="-1"/>
             <input type="submit" value="失败" class="exam-green">
         </form> 
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">  
+        <form method="post" action="/administrator/examine/wait/result?tid=<%=rs[0].tid %>">  
             <input type="hidden" name="status" value="1"/>
             <input type="submit" value="通过" class="exam-purple">
         </form> 
         <%}else if(rs[0].status==-1){%>
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">
+        <!-- fail page -->
+        <form method="post" action="/administrator/examine/fail/result?tid=<%=rs[0].tid %>">
             <input type="hidden" name="status" value="3"/>
             <input type="submit" value="删除" class="exam-gray">
         </form> 
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">  
+        <form method="post" action="/administrator/examine/fail/result?tid=<%=rs[0].tid %>">  
             <input type="hidden" name="status" value="1"/>
             <input type="submit" value="通过" class="exam-purple">
         </form> 
         <%}else if(rs[0].status==1){%>
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">
+        <!-- pass page -->
+        <form method="post" action="/administrator/examine/pass/result?tid=<%=rs[0].tid %>">
             <input type="hidden" name="status" value="3"/>
             <input type="submit" value="删除" class="exam-gray">
         </form>
-        <form method="post" action="/administrator/examine?tid=<%=rs[0].tid %>">
+        <form method="post" action="/administrator/examine/pass/result?tid=<%=rs[0].tid %>">
             <input type="hidden" name="status" value="-1"/>
             <input type="submit" value="下架" class="exam-green">
         </form>

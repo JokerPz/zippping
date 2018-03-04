@@ -17,22 +17,19 @@
     <img src="/images/logo_L.png" width="100%" height="100%">
     </div>
     <div class="login-word">
-      <form method="post" action="./login">
-        <!-- for和id绑定，type指定输入框类型，name用于后台 -->
-        <label for="acc">账号</label><!-- &emsp; -->
-        <input type="text" name="email" id="acc" class="login-box">
-        <!-- <br/><br/> -->
-        <label for="pwd">密码</label><!-- &emsp; -->
-        <input type="password" name="pwd" id="pwd" class="login-box">  
-        <div class="login-sub_but">
-            <input type="hidden" name="subflag" value="1"/>
-            <input type="submit" name="loginfo" value="登陆" class="login-submit">
-            <input type="button" name="register" value="注册" class="login-button" onclick="window.location.href='./register'" >
-
-        </div>
-
-
-     </form>          
+        <form method="post" action="./login">
+            <!-- for和id绑定，type指定输入框类型，name用于后台 -->
+            <label for="acc">账号</label><!-- &emsp; -->
+            <input type="text" name="email" id="acc" class="login-box">
+            <!-- <br/><br/> -->
+            <label for="pwd">密码</label><!-- &emsp; -->
+            <input type="password" name="pwd" id="pwd" class="login-box">  
+            <div class="login-sub_but">
+                <input type="hidden" name="subflag" value="1"/>
+                <input type="submit" name="loginfo" value="登陆" class="login-submit">
+                <input type="button" name="register" value="注册" class="login-button" onclick="window.location.href='./register'" >
+            </div>
+        </form>          
     </div>
 
 
