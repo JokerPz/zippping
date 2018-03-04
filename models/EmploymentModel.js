@@ -34,7 +34,7 @@ module.exports={
                     res.send("数据库错误,错误原因:"+err.message);
                     return;
                 }
-                res.send('<script>alert("发帖成功");location.href="../";</script>');
+                res.send('<script>alert("已提交审核");location.href="../";</script>');
                 // res.redirect('../');
             })
             
