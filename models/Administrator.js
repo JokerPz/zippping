@@ -249,7 +249,7 @@ module.exports={
             var sqldelete='delete from employment where tid = ?'
             var param = [req.query['tid']]
             conn.query(sqldelete,param,function(err,rs){
-                res.send('<script>alert("删除成功");location.href="http://localhost:3000/administrator/examine/wait";</script>')
+                res.send('<script>alert("删除成功");location.href="/administrator/examine/wait";</script>')
             })
         })
 
@@ -263,7 +263,7 @@ module.exports={
             var sqlpass='update employment set status = 1,handler=? where tid = ?'
             var param = [req.session.loginbean.nicheng,req.query['tid']]
             conn.query(sqlpass,param,function(err,rs){
-                res.send('<script>alert("审核通过");location.href="http://localhost:3000/administrator/examine/wait"</script>')
+                res.send('<script>alert("审核通过");location.href="/administrator/examine/wait"</script>')
             })
         })
     },
@@ -276,7 +276,7 @@ module.exports={
             var sqlfail='update employment set status = -1,handler=? where tid = ?'
             var param = [req.session.loginbean.nicheng,req.query['tid']]
             conn.query(sqlfail,param,function(err,rs){
-                res.send('<script>alert("审核下架");location.href="http://localhost:3000/administrator/examine/wait"</script>')
+                res.send('<script>alert("审核下架");location.href="/administrator/examine/wait"</script>')
             })
         })
     },
@@ -290,7 +290,7 @@ module.exports={
             var sqldelete='delete from employment where tid = ?'
             var param = [req.query['tid']]
             conn.query(sqldelete,param,function(err,rs){
-                res.send('<script>alert("删除成功");location.href="http://localhost:3000/administrator/examine/pass";</script>')
+                res.send('<script>alert("删除成功");location.href="/administrator/examine/pass";</script>')
             })
         })
     },
@@ -303,7 +303,7 @@ module.exports={
             var sqlfail='update employment set status = -1,handler=? where tid = ?'
             var param = [req.session.loginbean.nicheng,req.query['tid']]
             conn.query(sqlfail,param,function(err,rs){
-                res.send('<script>alert("审核下架");location.href="http://localhost:3000/administrator/examine/pass"</script>')
+                res.send('<script>alert("审核下架");location.href="/administrator/examine/pass"</script>')
             })
         })
     },
@@ -316,7 +316,7 @@ module.exports={
             var sqlpass='update employment set status = 1,handler=? where tid = ?'
             var param = [req.session.loginbean.nicheng,req.query['tid']]
             conn.query(sqlpass,param,function(err,rs){
-                res.send('<script>alert("审核通过");location.href="http://localhost:3000/administrator/examine/fail"</script>')
+                res.send('<script>alert("审核通过");location.href="/administrator/examine/fail"</script>')
             })
         })
     },
@@ -330,7 +330,7 @@ module.exports={
             var sqldelete='delete from employment where tid = ?'
             var param = [req.query['tid']]
             conn.query(sqldelete,param,function(err,rs){
-                res.send('<script>alert("删除成功");location.href="http://localhost:3000/administrator/examine/fail";</script>')
+                res.send('<script>alert("删除成功");location.href="/administrator/examine/fail";</script>')
             })
         })
     },

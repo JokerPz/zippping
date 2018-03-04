@@ -65,7 +65,7 @@ module.exports={
                     
                     
                 }else{   
-                    res.send('<script>alert("账号/密码错误,请重新输入");location.href="http://localhost:3000/users/login";</script>')  
+                    res.send('<script>alert("账号/密码错误,请重新输入");location.href="/users/login";</script>')  
                 }   
             })   
             conn.release();
