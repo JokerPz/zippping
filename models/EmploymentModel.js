@@ -141,13 +141,18 @@ module.exports={
                 var sqlparam=[tid];
                
                 conn.query(sqldetail,sqlparam,function(err,rs){
-                    if(req.session.loginbean==undefined){
-                        res.render('zpdetail',{rs:rs,loginbean:req.session.loginbean})
-                    }else if(req.session.loginbean.privilige==1){
-                        res.render('zpdetail_admin',{rs:rs,loginbean:req.session.loginbean})
+                    if(rs[0]){
+                        if(req.session.loginbean==undefined){
+                            res.render('zpdetail',{rs:rs,loginbean:req.session.loginbean})
+                        }else if(req.session.loginbean.privilige==1){
+                            res.render('zpdetail_admin',{rs:rs,loginbean:req.session.loginbean})
+                        }else{
+                            res.render('zpdetail',{rs:rs,loginbean:req.session.loginbean})
+                        }
                     }else{
-                        res.render('zpdetail',{rs:rs,loginbean:req.session.loginbean})
+                        res.send('Zippping')
                     }
+                    
                    
                 })
                 conn.release();
