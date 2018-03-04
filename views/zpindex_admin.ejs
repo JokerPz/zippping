@@ -8,7 +8,7 @@
 				<td class="title-type">活动类型</td>
 				<td class="title-time">时间</td>
 				<td class="title-place">地点</td>
-				<td class="title-collect" style="color: #AEAEAE">分色收藏</td>
+				<td class="title-collect" style="color: #6c2393;padding-left: 30px;">收藏</td>
 			</tr>
 	</table>
 <% if(rs!=undefined){ 
@@ -21,7 +21,7 @@
 				<td class="text-type"><%= row['type']%></td>
 				<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
 				<td class="text-place"><%= row['place']%></td>
-				<td class="text-collect">
+				<td class="text-collect" style="padding-left: 33.5px;">
 				<% if(loginbean!=undefined){ %>
 					<% if(business==undefined){ %>
 					<ul>
@@ -30,11 +30,11 @@
 						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a> -->
 						<% if(!row['cid']){%>
 						<label  for="one-box" >           
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0';">
+							<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0';">
 						</label> 
 						<% }else{ %>
 						<label  for="one-box" >           
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&back=0'">
+							<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&back=0'">
 						</label>
 						<%}%>
 			
@@ -46,11 +46,11 @@
 						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a> -->
 						<% if(!row['cid']){%>
 						<label  for="one-box" >           
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1';">
+							<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1';">
 						</label> 
 						<% }else{ %>
 						<label  for="one-box" >           
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&business=<%= row['business']%>&back=1'">
+							<img  alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=row['tid']%>&page=<%=page %>&business=<%= row['business']%>&back=1'">
 						</label>
 						<%}%>
 					</ul>
@@ -58,7 +58,7 @@
 				<% }else{ %>
 					<ul>
 						<label  for="one-box" >           
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img  alt="初始" src="/images/Star_S_2.png" id="checkimg" onclick="black_star()">
+							<img  alt="初始" src="/images/Star_S_2.png" id="checkimg" onclick="black_star()">
 						</label>
 					</ul>
 				<% } %>
