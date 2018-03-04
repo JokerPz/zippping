@@ -284,31 +284,28 @@ module.exports={
                         if(err){
                             // console.log('数据库错误，错误原因：'+err.message)
                             res.send('数据库错误，错误原因：'+err.message)
-                           
                             return
                         }
-                        // console.log(rs)
-                    })
-                    console.log("back:"+req.query['back'])
-                    switch(req.query['back']){
-                        case '0':
-                            res.redirect('/?page='+req.query['page']);
-                            break;
-                        case '1':
-                            res.redirect('/?page='+req.query['page']+'&business='+req.query['business']);
-                            break;
-                        case '2':
-                            res.redirect('/employment/eplist?page='+req.query['page']);
-                            break;
-                        case '3':
-                            res.redirect('/employment/eplist?page='+req.query['page']+'&business='+req.query['business']);
-                            break;
-                        case '6':
-                            res.redirect('/employment/detail?tid='+req.query['tid']);
-                            break;
+                        switch(req.query['back']){
+                            case '0':
+                                res.redirect('/?page='+req.query['page']);
+                                break;
+                            case '1':
+                                res.redirect('/?page='+req.query['page']+'&business='+req.query['business']);
+                                break;
+                            case '2':
+                                res.redirect('/employment/eplist?page='+req.query['page']);
+                                break;
+                            case '3':
+                                res.redirect('/employment/eplist?page='+req.query['page']+'&business='+req.query['business']);
+                                break;
+                            case '6':
+                                res.redirect('/employment/detail?tid='+req.query['tid']);
+                                break;
+                        }
 
-                    }
-                    //res.send('数据表不存在记录')
+                    })
+                    
                 }
             })
             conn.release();
