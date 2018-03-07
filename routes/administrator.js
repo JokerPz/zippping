@@ -20,6 +20,11 @@ router.get('/examine/pass',function(req,res,next){
     //res.send('aaaaaa')
     administrator.examine_pass(req,res);
 })
+router.get('/data',function(req,res,next){
+    loginbean=checksession.checkadmin(req,res);
+    //res.send('aaaaaa')
+    administrator.accSum(req,res);
+})
 
 router.get('/examine/fail',function(req,res,next){
     loginbean=checksession.checkadmin(req,res);

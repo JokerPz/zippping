@@ -97,3 +97,10 @@ background-color: #CDCDCD;
 height: 1px;
 border: none;
 }
+
+.hr{
+	padding: 0 auto;
+	background-color: #AEAEAE;
+	height: 1px;
+	border: none;
+}

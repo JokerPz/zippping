@@ -84,7 +84,11 @@
 			<% } %>
 			</td>
 		</tr>
-	
+		<!--需要修改  需要验证-->	
+		<form method="post" action="/employment/delete?tid=<%=rs[0].tid %>"> 
+            <input type="hidden" name="status" value="3"/>
+            <input type="submit" value="删除" class="exam-gray">
+        </form>
 	</table>
 
 </div>

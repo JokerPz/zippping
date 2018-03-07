@@ -4,36 +4,13 @@
 	<meta charset="utf-8"/>
 	<title>Zippping</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/nav.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/post.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/images/logo.png"> 
+	<link rel="stylesheet" type="text/css" href="/stylesheets/post.css">
+	<link href="/stylesheets/jquery-ui-1.10.4.custom.css" rel="stylesheet">
 </head>
 
 <body style="margin: 0;padding: 0;background-color: #F2F2F2">
-<% if(loginbean==undefined){ %> 
-<div class="top1">
-	<div style="width: 1000px;height: 70px;margin: 0 auto;">
-		<img src="../images/logo_S.gif" style="
-		width: 195px;
-		height: 50px;
-		padding-top: 10px;
-		padding-left: 30px">
-
-		<div class="inside" style="margin-right: 20px;border:none;color: #434343">
-			<a href="/users/login" style="color: #434343">登录</a> / 
-			<a href="/users/register" style="color: #434343">注册</a>
-		</div>
-
-		<div class="inside">
-			<a onclick="alert('需登录后执行')" href="#">我要发帖</a>
-		</div>
-
-		<div class="inside">
-			<a onclick="alert('需登录后执行')" href="#">我的收藏</a>
-		</div>
-	</div>
-</div>
-<% }else{ %> 
-	<div class="top1">
+    <% if(loginbean==undefined){ %> 
+    <div class="top1">
         <div style="width: 1000px;height: 70px;margin: 0 auto;">
             <img src="/images/logo_S.gif" style="
             width: 195px;
@@ -41,35 +18,58 @@
             padding-top: 10px;
             padding-left: 30px">
     
-            <div class="inside2" style="margin-right: 20px;border:none;color: #434343">
-                <a  href="#" onClick="javascript:location.href='/logout'">退出</a>
+            <div class="inside" style="margin-right: 20px;border:none;color: #434343">
+                <a href="/users/login" style="color: #434343">登录</a> / 
+                <a href="/users/register" style="color: #434343">注册</a>
             </div>
     
-            <div class="inside2"><a href="/employment/emy">我要发帖</a></div>
-            <div class="inside2"><a href="/employment/eplist">我发的贴</a></div>
-            <div class="inside2"><a href="/employment/collection/list">我的收藏</a></div>
-            <div class="inside2"><a href="#" style="color: #6c2393;font-weight: 500"><%=loginbean.nicheng%></a></div>
+            <div class="inside">
+                <a onclick="alert('需登录后执行')" href="#">我要发帖</a>
+            </div>
+    
+            <div class="inside">
+                <a onclick="alert('需登录后执行')" href="#">我的收藏</a>
+            </div>
         </div>
     </div>
-<% } %> 
-
-
-<div class="top2">
-	<div style="width: 1000px;height: 24px;margin: 0 auto;">
-		<ul>
-			<li style="padding-left: 176px"><a href="/">首页</a></li>
-			<li><a href="/?business=IT互联网">IT互联网</a></li>
-			<li><a href="/?business=金融">金融</a></li>
-			<li><a href="/?business=广告">广告</a></li>
-			<li><a href="/?business=房地产">房地产</a></li>
-			<li><a href="/?business=消费品">消费品</a></li>
-			<li><a href="/?business=制造业">制造业</a></li>
-			<li><a href="/?business=其他">其他</a></li>
-			<li style="float: right;margin-right: 20px"><a href="#">帮助</a></li>
-		</ul>
-	</div>
-</div>
-<div style="background-color: #fff;width: 1000px;height: 765px;margin: 0 auto;">
+    <% }else{ %> 
+        <div class="top1">
+            <div style="width: 1000px;height: 70px;margin: 0 auto;">
+                <img src="/images/logo_S.gif" style="
+                width: 195px;
+                height: 50px;
+                padding-top: 10px;
+                padding-left: 30px">
+        
+                <div class="inside2" style="margin-right: 20px;border:none;color: #434343">
+                    <a  href="#" onClick="javascript:location.href='/logout'">退出</a>
+                </div>
+        
+                <div class="inside2"><a href="/employment/emy">我要发帖</a></div>
+                <div class="inside2"><a href="/employment/eplist">我发的贴</a></div>
+                <div class="inside2"><a href="/employment/collection/list">我的收藏</a></div>
+                <div class="inside2"><a href="#" style="color: #6c2393;font-weight: 500"><%=loginbean.nicheng%></a></div>
+            </div>
+        </div>
+    <% } %> 
+    
+    
+    <div class="top2">
+        <div style="width: 1000px;height: 24px;margin: 0 auto;">
+            <ul>
+                <li style="padding-left: 176px"><a href="/">首页</a></li>
+                <li><a href="/?business=IT互联网">IT互联网</a></li>
+                <li><a href="/?business=金融">金融</a></li>
+                <li><a href="/?business=广告">广告</a></li>
+                <li><a href="/?business=房地产">房地产</a></li>
+                <li><a href="/?business=消费品">消费品</a></li>
+                <li><a href="/?business=制造业">制造业</a></li>
+                <li><a href="/?business=其他">其他</a></li>
+                <li style="float: right;margin-right: 20px"><a href="#">帮助</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="background-color: #fff;width: 1000px;height: 765px;margin: 0 auto;">
     
     <div style="padding-left: 50px;padding-top: 25px;padding-right: 50px;">
         
@@ -81,9 +81,9 @@
             <br>
     
             <label for="place" style="color: #6c2393;">活动地点<label class="required">*</label></label>
-            <input type="text" name="place" id="place" class="place-box" required pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
+            <input type="text" name="place" id="place" class="place-box" pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
     
-            <label for="trade" style="margin-left: 35px;color: #6c2393;">所处行业<label class="required">*</label></label>
+            <label for="trade" style="margin-left: 33px;color: #6c2393;">所处行业<label class="required">*</label></label>
             <select name="business" id="trade" class="trade-select" required oninvalid="setCustomValidity('请选择所处行业')" oninput="setCustomValidity('')">
                 <option disabled selected value>请选择...</option>
                 <option value="IT互联网">IT互联网</option>
@@ -97,16 +97,16 @@
     
             <br>
     
-            <label style="color: #6c2393;">活动类型<label class="required">*</label></label>
-            <input type="checkbox" name="type1" style="margin-left: 15px;vertical-align:middle;" value="宣讲">
-            宣讲
-            <input type="checkbox" name="type2" style="margin-left: 30px;vertical-align:middle;">
-            招聘
+            <label style="color: #6c2393;">活动方式<label class="required">*</label></label>
+            <input type="radio" id="type1" name="type" style="margin-left: 15px;vertical-align:middle;" value="0">
+            <label style="font-size:12px;vertical-align:middle;">线上<label>
+            <input type="radio" id="type2" name="type" style="margin-left: 30px;vertical-align:middle;" value="1">
+            <label style="font-size:12px;vertical-align:middle;">线下<label>
     
-            <label for="year" style="margin-left: 171px;color: #6c2393;">活动时间<label class="required">*</label></label>
+            <label for="year" style="margin-left: 171px;color: #6c2393;">活动时间</label>
     
-            <input type="date" name="date" class="date" required oninvalid="setCustomValidity('请选择日期')" oninput="setCustomValidity('')" onclick="noChoose();">
-    
+	        <input type="text" name="date" id="datepicker" style="padding-left: 5px;margin-left:15px;vertical-align:middle;font-size: 12px;color: #515151;width: 93px;border: 1px solid #AEAEAE;height: 16px;"onclick="noChoose();">
+
             <select name="hour" id="hours" class="time2-select">
                 <option value="00">00</option>
                 <option value="01">01</option>
@@ -139,43 +139,43 @@
                 <option value="30">30</option>
                 <option value="45">45</option>
             </select>
-    
+
             <hr class="hr2">
-    
+
             <table border="0">
                 <tr>
                     <td valign="top" style="color: #6c2393">
                         活动内容<label class="required">*</label>
                     </td>
-    
+
                     <td>
                         <textarea class="content" id="content" name="content" required pattern="^.{1,1000}$" oninvalid="setCustomValidity('请控制在1000字以内')" oninput="setCustomValidity('')"></textarea>
                     </td>
                 </tr>
             </table>
-    
+
             <hr class="hr2" style="margin-bottom: 23px;">
-    
+
             <label style="color: #6c2393;">联系方式</label>
             <label style="color: #515151;margin-left: 15px">名称<label class="required">*</label></label>
             <input type="text" name="name" id="name" class="contact-box" required pattern="^.{1,15}$" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
-    
+
             <label style="color: #515151;margin-left: 45px">电话<label class="required">*</label></label>
             <input type="text" name="phone" id="name" class="contact-box" required pattern="^[0-9]{1,15}$" oninvalid="setCustomValidity('请输入正确的电话或手机号码')" oninput="setCustomValidity('')">
-    
+
             <label style="color: #515151;margin-left: 45px">邮箱</label>
             <input type="email" name="email" id="name" class="email-box" pattern="^{1,30}$" oninvalid="setCustomValidity('请输入正确的邮箱')" oninput="setCustomValidity('')">
-    
+
             <br>
-    
+
             <label style="color: #515151;margin-left: 67px">微信</label>
             <input type="text" name="wechat" id="name" class="contact-box" style="margin-left: 12px;" pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
-    
+
             <label style="color: #515151;margin-left: 45px">QQ</label>
             <input type="text" name="QQ" id="name" class="contact-box"  style="margin-left: 19px;" pattern="^.{1,15}$" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
-    
+
             <br>
-    
+
             <div style="float: right;margin-top: 10px;">
                 
                 <input type="checkbox" id="cbox" class="check-box" name="agree" value="1" required>
@@ -185,21 +185,16 @@
                 <a href="rules.html" class="rule">《Zippping管理规定》</a>
                 <input type="hidden" name="subflag" value="1"/>
                 <input type="submit" class="post" value="提交">
-    
+
             </div>
 
         </form>
     </div>
-    
+
     </div>
-    <script>
-        function noChoose() {
-            if ( !($(":checkbox[name='type1']").is(':checked')) && !($(":checkbox[name='type2']").is(':checked')) )
-                alert("请至少选择一种活动类型");
-        }
-    </script>
-    
-    <script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.slim.min.js"></script>
-    </body>
-    
-    </html>
+<script src="/javascripts/jquery-1.10.2.js"></script>
+<script src="/javascripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/javascripts/no.js"></script>
+</body>
+
+</html>

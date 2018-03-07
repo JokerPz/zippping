@@ -82,9 +82,45 @@
 	font-family: "Arial" ;
 }
 
+input[type="text"],input[type="password"],input[type="email"] {
+	padding-left: 5px;
+}
+
+
+.register-phone {
+	margin: 70px 0 15px 13px;
+	width: 125px ;
+	height: 20px ;
+	border: 1px solid #A1A1A1 ;
+	border-radius: 5px ;	
+}
+
+.get-code {
+	display: inline-block;
+	margin-left:12px;
+	color: #fff ;
+	background-color: #94C744;
+	border-radius: 5px ;
+	width: 80px;
+	height: 24px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	border: none;
+}
+
+.enter-code {
+	margin-left: 12px;
+	border: 1px solid #A1A1A1;
+	border-radius: 5px;
+	width: 70px;
+	height: 20px ;	
+}
+
+
 .register-name {
-	margin: 70px 0 15px 25px;
-	width: 140px ;
+	margin: 0 0 15px 25px;
+	width: 125px ;
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
@@ -108,20 +144,14 @@
 }
 
 .register-code {
-	margin: 0 0 15px 12px;
+	margin: 0 0 15px 13px;
 	width: 80px ;
 	height: 20px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
 }
 
-.register-txt_ver {
-	margin: 0 0 0 15px;
-	border: 1px solid #A1A1A1 ;
-}
-
 .register-hr {
-	/* 考虑兼容性*/
 	margin: 0px;  /*Chrome Firefox*/
  	text-align: center; /*IE Edge Opera*/
 	width: 270px ;

@@ -20,15 +20,15 @@
 	rs.forEach(function(row){ %>
 	<table style="padding-left: 50px;">
 		<tr>
+			<% if(loginbean!=undefined){ %>
+			
+			<% if(web==1){ %>
 			<td class="text-theme">
-				<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
+				<a class="home-title" href="/employment/perdetail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
 			</td>
 			<td class="text-type"><%= row['type']%></td>
 			<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
 			<td class="text-place"><%= row['place']%></td>
-			<% if(loginbean!=undefined){ %>
-			
-			<% if(web==1){ %>
 			<td class="text-collect" style="padding-left:5px;">
 				<%if(!business){%>
 				<ul>
@@ -53,6 +53,12 @@
 			</td>
 			<% } %>
 			<% }else if(web==2) {%>
+			<td class="text-theme">
+				<a class="home-title" href="/employment/detail?tid=<%= row['tid'] %>"><%= row['title'] %></a>
+			</td>
+			<td class="text-type"><%= row['type']%></td>
+			<td class="text-time"><%= row['year']%>/<%= row['month']%>/<%= row['day']%> <%= row['hour']%>:<%= row['minute']%></td>
+			<td class="text-place"><%= row['place']%></td>
 			<td class="text-collect" style="padding-left: 33.5px;">
 				<%if(business==undefined){%>
 				<label  for="one-box" >           

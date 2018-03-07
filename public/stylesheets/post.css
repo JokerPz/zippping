@@ -27,7 +27,7 @@ form.form-post{
 
 .contact-box{
 	margin: 0 0 15px 7px;
-	width: 170px ;
+	width: 140px ;
 	height: 18px ;
 	border: 1px solid #A1A1A1 ;
 	border-radius: 5px ;
@@ -53,7 +53,7 @@ form.form-post{
 	font-size: 12px;
 	color: #515151;
 	padding: auto;
-	margin-left: 15px;
+	margin-left: 10px;
 	border: 1px solid #A1A1A1 ;
 }
 

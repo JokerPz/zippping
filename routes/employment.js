@@ -71,6 +71,24 @@ router.get('/collection/del',function(req,res){
     }
 })
 
+router.get('/perdetail',function(req,res){
+    loginbean=checksession.check(req,res)
+    if(!loginbean){
+        return
+    }else{
+        employmentmodel.pusDetail(req,res)
+    }
+})
+
+router.post('/delete',function(req,res){
+    loginbean=checksession.check(req,res)
+    if(!loginbean){
+        return
+    }else{
+        employmentmodel.emyDelete(req,res)
+    }
+})
+
 router.post('/aaa',function(req,res){
     res.send('已收藏')
 })

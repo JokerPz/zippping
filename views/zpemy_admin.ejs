@@ -14,7 +14,7 @@
             <label for="place" style="color: #6c2393;">活动地点<label class="required">*</label></label>
             <input type="text" name="place" id="place" class="place-box" required pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
 
-            <label for="trade" style="margin-left: 53px;color: #6c2393;">所处行业<label class="required">*</label></label>
+            <label for="trade" style="margin-left: 66px;color: #6c2393;">所处行业<label class="required">*</label></label>
             <select name="business" id="trade" class="trade-select" required oninvalid="setCustomValidity('请选择所处行业')" oninput="setCustomValidity('')">
                 <option disabled selected value>请选择...</option>
                 <option value="IT互联网">IT互联网</option>
@@ -28,15 +28,15 @@
 
             <br>
 
-            <label style="color: #6c2393;">活动类型<label class="required">*</label></label>
-            <input type="checkbox" name="type1" style="margin-left: 15px;vertical-align:middle;" value="宣讲">
-            宣讲
-            <input type="checkbox" name="type2" style="margin-left: 30px;vertical-align:middle;">
-            招聘
-
-            <label for="year" style="margin-left: 171px;color: #6c2393;">活动时间<label class="required">*</label></label>
-
-            <input type="date" name="date" class="date" required oninvalid="setCustomValidity('请选择日期')" oninput="setCustomValidity('')" onclick="noChoose();">
+            <label style="color: #6c2393;">活动方式<label class="required">*</label></label>
+            <input type="radio" id="type1" name="type" style="margin-left: 15px;vertical-align:middle;" value="0">
+            线上
+            <input type="radio" id="type2" name="type" style="margin-left: 30px;vertical-align:middle;" value="1">
+            线下
+    
+            <label for="year" style="margin-left: 171px;color: #6c2393;">活动时间</label>
+    
+	        <input type="text" name="date" id="datepicker" style="padding-left: 5px;margin-left:15px;vertical-align:middle;font-size: 12px;color: #515151;width: 93px;border: 1px solid #AEAEAE;height: 16px;"onclick="noChoose();">
 
             <select name="hour" id="hours" class="time2-select">
                 <option value="00">00</option>
@@ -80,7 +80,7 @@
                     </td>
 
                     <td>
-                        <textarea class="content" id="content" name="content" required pattern="^.{1,750}$" oninvalid="setCustomValidity('请控制在750字以内')" oninput="setCustomValidity('')"></textarea>
+                        <textarea class="content" id="content" name="content" required pattern="^.{1,1000}$" oninvalid="setCustomValidity('请控制在1000字以内')" oninput="setCustomValidity('')"></textarea>
                     </td>
                 </tr>
             </table>
@@ -89,13 +89,13 @@
 
             <label style="color: #6c2393;">联系方式</label>
             <label style="color: #515151;margin-left: 15px">名称<label class="required">*</label></label>
-            <input type="text" name="name" id="name" class="contact-box" required pattern="^.{1,8}$" oninvalid="setCustomValidity('请控制在8字以内')" oninput="setCustomValidity('')">
+            <input type="text" name="name" id="name" class="contact-box" required pattern="^.{1,15}$" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
 
             <label style="color: #515151;margin-left: 45px">电话<label class="required">*</label></label>
-            <input type="text" name="phone" id="name" class="contact-box" required pattern="^[0-9]{11,11}$" oninvalid="setCustomValidity('请输入正确的手机号码')" oninput="setCustomValidity('')">
+            <input type="text" name="phone" id="name" class="contact-box" required pattern="^[0-9]{1,15}$" oninvalid="setCustomValidity('请输入正确的电话或手机号码')" oninput="setCustomValidity('')">
 
             <label style="color: #515151;margin-left: 45px">邮箱</label>
-            <input type="email" name="email" id="name" class="email-box" oninvalid="setCustomValidity('请输入正确的邮箱')" oninput="setCustomValidity('')">
+            <input type="email" name="email" id="name" class="email-box" pattern="^{1,30}$" oninvalid="setCustomValidity('请输入正确的邮箱')" oninput="setCustomValidity('')">
 
             <br>
 
@@ -110,24 +110,20 @@
             <div style="float: right;margin-top: 10px;">
                 
                 <input type="checkbox" id="cbox" class="check-box" name="agree" value="1" required>
+                
                 <label for="cbox">已同意</label>
+                
                 <a href="rules.html" class="rule">《Zippping管理规定》</a>
                 <input type="hidden" name="subflag" value="1"/>
                 <input type="submit" class="post" value="提交">
 
             </div>
+
         </form>
     </div>
 
-</div>
-<script>
-    function noChoose() {
-        if ( !($(":checkbox[name='type1']").is(':checked')) && !($(":checkbox[name='type2']").is(':checked')) )
-            alert("请至少选择一种活动类型");
-    }
-</script>
-
-<script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.slim.min.js"></script>
+    </div>
+<script src="/javascripts/no.js"></script>
 </body>
 
 </html>
