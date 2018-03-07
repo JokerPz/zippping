@@ -449,7 +449,7 @@ module.exports={
                 res.send('获取链接错误，错误原因：'+err.message)
                 return
             }
-            var sqlcount='select count(uid) from employment'
+            var sqlcount='select count(uid) from user'
             var param = []
             conn.query(sqlcount,param,function(err,rs){
                 if(err){
