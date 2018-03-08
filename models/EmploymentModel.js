@@ -503,5 +503,13 @@ module.exports={
         }else{
             res.send("没传入tid")
         }
+    },
+    agreement:function(req,res){
+        if(req.session.loginbean!=undefined){
+            res.render('zpagreement',{loginbean:req.session.loginbean})
+        }else{
+            res.render('zpagreement')
+        }
+       
     }
 }

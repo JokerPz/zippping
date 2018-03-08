@@ -89,9 +89,14 @@ router.post('/delete',function(req,res){
     }
 })
 
-router.post('/aaa',function(req,res){
-    res.send('已收藏')
+router.get('/agreement',function(req,res){
+    loginbean=checksession.check(req,res)
+    if(!loginbean){
+        return
+    }else{
+        employmentmodel.agreement(req,res)
+    }
+    
 })
-
 
 module.exports=router;

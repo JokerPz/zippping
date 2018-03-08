@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Zippping</title>
+	<link rel="stylesheet" type="text/css" href="\stylesheets\nav.css">
+	<link rel="stylesheet" type="text/css" href="\stylesheets\home.css">
+    <link rel="stylesheet" type="text/css" href="\stylesheets\agreement.css">
+    <link href="/stylesheets/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    
+</head>
+
+
+<body style="margin: 0;padding: 0;background-color: #F2F2F2">
+<% if(loginbean==undefined){ %> 
+<div class="top1">
+    <div style="width: 1000px;height: 70px;margin: 0 auto;">
+        <img src="../images/logo_S.gif" style="
+        width: 195px;
+        height: 50px;
+        padding-top: 10px;
+        padding-left: 30px">
+
+        <div class="inside" style="margin-right: 20px;border:none;color: #434343">
+            <a href="/users/login" style="color: #434343">登录</a> / 
+            <a href="/users/register" style="color: #434343">注册</a>
+        </div>
+
+        <div class="inside">
+            <a onclick="alert('需登录后执行')" href="#">我要发帖</a>
+        </div>
+
+        <div class="inside">
+            <a onclick="alert('需登录后执行')" href="#">我的收藏</a>
+        </div>
+    </div>
+</div>
+<% }else{ %> 
+<div class="top1">
+    <div style="width: 1000px;height: 70px;margin: 0 auto;">
+        <img src="/images/logo_S.gif" style="
+        width: 195px;
+        height: 50px;
+        padding-top: 10px;
+        padding-left: 30px">
+
+        <div class="inside2" style="margin-right: 20px;border:none;color: #434343">
+            <a  href="#" onClick="javascript:location.href='/logout'">退出</a>
+        </div>
+
+        <div class="inside2"><a href="/employment/emy">我要发帖</a></div>
+        <div class="inside2"><a href="/employment/eplist">我发的贴</a></div>
+        <div class="inside2"><a href="/employment/collection/list">我的收藏</a></div>
+        <div class="inside2"><a href="#" style="color: #6c2393;font-weight: 500"><%=loginbean.nicheng%></a></div>
+    </div>
+</div>
+<% } %> 
+<div class="top2">
+	<div style="width: 1000px;height: 24px;margin: 0 auto;">
+		<ul>
+			<li style="padding-left: 176px"><a href="/">首页</a></li>
+			<li><a href="/?business=IT互联网">IT互联网</a></li>
+			<li><a href="/?business=金融">金融</a></li>
+			<li><a href="/?business=广告">广告</a></li>
+			<li><a href="/?business=房地产">房地产</a></li>
+			<li><a href="/?business=消费品">消费品</a></li>
+			<li><a href="/?business=制造业">制造业</a></li>
+			<li><a href="/?business=其他">其他</a></li>
+			<li style="float: right;margin-right: 20px"><a href="/users/agreement" target="blank">帮助</a></li>
+		</ul>
+	</div>
+</div>
+
+<div style="background-color: #fff;width: 1000px;height: 1680px;margin: 0 auto;">
+	<div style="padding: 15px 30px;">
+		<p class="title1">Zppping用户服务协议</p>
+
+		<p class="title2">（一）版权</p>
+		<p class="p1" style="text-indent: 2em;">
+		此网站的内容、图表、版式设计等所呈现出的全部或部分可单独作为作品保护之内容等及维系本网站运营的各种源代码、执行程序、系统均受到中国版权法律、法规及相关国际条约的保护。Zhaopin.com拥有一切权利，未经Zippping.com同意，不允许全部或部分复制、转载或以其他任何方式使用。禁止以任何目的重新使用Zippping.com网上的内容和图表等作品或作品元素。在内容和图表等作品、元素不作任何修改、保留内容未做修改以及事先得到Zippping.com的许可的情况下，Zippping.com的网上材料可作为网外信息方面和非商业方面的用途。<br>
+		Zhaopin.com对其网址上的所有图标、图饰、图表、色彩、文字表述及其组合、版面设计、数据库均享有完全的著作权及其衍生的其他全部权利。
+		</p>
+
+		<p class="title2">（二）注册</p>
+		<p class="p1">
+		1、Zippping.com不对除完全民事行为能力人以外的主体开放，任何不具备完全民事行为能力的主体都不是本网站的合格使用者，Zippping.com有权采取注销账户的处理措施。<br>
+		2、使用者应自行负责用户名、登录密码、验证码的安全。使用者应对通过使用者账户和密码实施的行为负责，不得将上述信息提供给任何第三方使用或从事任何可能使用户名、密码存在泄露危险的行为。因此所衍生的任何损失或损害，Zippping.com不承担任何责任。<br>
+		3、当使用者发现任何账户的不当使用或有任何其他可能危及账户安全的情形时，应立即告知Zippping.com。使用者理解并知悉Zippping.com采取行动需要合理时间，Zippping.com对在采取行动前已经产生的后果（包括但不限于使用者的任何损失）不承担任何责任。<br>
+		4、使用者了解并知悉一经注册，即视为您同意Zippping.com通过短信或者电子邮件的方式向使用者的手机号码或者电子邮箱发送相应的产品服务信息。<br>
+		</p>
+
+		<p class="title2">(三)网站使用</p>
+		<p class="title3">1、明确的禁止使用</p>
+		<p class="p1">
+		Zippping.com 只能用于合法目的，即个人寻找工作和雇主寻找雇员。Zippping.com 明确禁止任何其他用途，并要求所有使用者同意不用于下列任何一种用途：<br>
+		（1）发布非招聘信息，如意见、通知、商业广告或其他非招聘内容。<br>
+		（2）除发布者外，删除或修改其他个人或公司公布的资料。<br>
+		（3）擅自打印、复制或以其他方式使用有关雇主的商业信息。
+		</p>
+
+		<p class="title3">2、网址安全法规</p>
+		<p class="p1">
+		禁止使用者破坏或企图破坏 Zippping.com 的安全法规，包括但不限于：<br>
+		（1）接触未经许可的数据或进入未经许可的服务器、帐户、邮箱。<br>
+		（2）没有得到许可，企图探查、扫描或测试系统或网络的弱点或者破坏安全措施；<br>
+		（3）企图干涉对用户及网络的服务，包括但不限于通过超载、“邮件炸弹”或“摧毁”等手段；<br>
+		（4）发送促销、产品广告及服务的email；<br>
+		（5）伪造TCP/IP数据包名称或部分名称，破坏系统或网络。
+		</p>
+
+		<p class="title3">3、总则严禁从事以下行为：</p>
+		<p class="p1">
+		（1）违反任何现行法律法规及其不时的修订；<br>
+		（2）侵犯他人的版权、商业机密、或其他知识产权，或侵犯了他人的隐私权、出版权或其他个人合法权利；<br>
+		（3）利用本网站传送、分发、储存属于诽谤、淫秽、威胁、辱骂性、毁损他人或其他非法或者违反社会公序良俗的材料；<br>
+		（4）利用本网站提供的服务系统进行任何可能对互联网或移动网正常运转造成不利影响的行为；<br>
+		（5）以任何形式使用本网站提供的服务进行任何不利于本网站的行为。
+
+		<p class="title2">(四)暂停使用、终止使用</p>
+		<p class="p1" >
+		任何一位使用者经 Zippping.com 确定已违反了网站使用规则某一项规定， Zippping.com 有权马上暂停或终止对该使用者的服务。
+		</p>
+
+		<p class="title2">(五)免责条款</p>
+		<p class="title3">1、使用者理解并同意Zippping.com对以下情况免责：</p>
+		<p class="p1">
+		（1）招聘信息发布方对内容的真实性、准确性和合法性负有全部责任。Zippping.com仅是提供招聘信息的平台，Zippping.com不对招聘信息的真实性、有效性、准确性负责。<br>
+		（2）Zippping.com并不能时时监视此网址，但保留进行随时监视的权利。对于非Zippping.com公布的材料，Zippping.com一概不负任何责任。<br>
+		（3）Zippping.com不对用户的线下行为负责。企业用户及个人用户均应审慎的对待他方之行为，因为他方之行为给用户造成的不利影响，Zippping.com不承担任何法律责任。<br>
+		（4）Zippping.com对由于政府禁令、现行生效的适用法律或法规的变更、火灾、地震、动乱、战争、停电、通讯线路中断、黑客攻击、计算机病毒侵入或发作、电信部门技术调整、因政府管制而造成网站的暂时性关闭等任何影响网络正常运营的不可预见、不可避免、不可克服和不可控制的事件（“不可抗力事件”），以及他人蓄意破坏、Zippping.com工作人员的疏忽或不当使用，正常的系统维护、系统升级，或者因网络拥塞而导致本网站不能访问而造成的本网站所提供的信息及数据的延误、停滞或错误，以及使用者由此受到的一切损失不承担任何责任。<br>
+		（5）由于与本网站链接的其他网站或用户所使用的网络运营商所造成之个人资料泄露及由此而导致的任何法律争议和后果均由网站或用户所使用的网络运营商负责；<br>
+		（6）对于Zippping.com为使用者提供便利而设置的外部链接网址，Zippping.com并不保证其准确性、安全性和完整性，亦并不代表本网站对其链接内容的认可，请使用者谨慎确认后使用，Zippping.com对由此导致的任何损失或伤害不承担任何责任。
+		</p>
+
+		<p class="title3">2、使用者理解并同意Zippping.com可以向第三方提供综合性的非个人化信息资料。除非：</p>
+		<p class="p1">
+		（1）依照法律、法规、法院命令、监管机构命令的要求；<br>
+		（2）根据政府行为、监管要求或请求；<br>
+		（3）因Zippping.com其认为系为遵守监管义务或公共目的所需；<br>
+		（4）为免除访问者在生命、身体或财产方面之急迫危险，否则在没有本人事先同意的情况下，Zippping.com 不会向第三方公开你的姓名、地址、电子邮件和电话等个人信息。
+		</p>
+
+		<p class="title2">(六)风险声明</p>
+		<p class="p1" style="text-indent: 2em;">
+		你使用本网址将自行承担风险。Zippping.com不能保证材料的特殊目的不受阻挠不出错误，也不能保证错误会得到纠正，也不能保证本网址或制成本网址的材料不含有病毒或其他有害成分。在有关材料的使用或使用结果方面对材料的正确性、准确性、可靠性或其他方面，Zippping.com 不作出保证或任何说明。
+		</p>
+	</div>
+</div>
+
+</body>
+
+</html>

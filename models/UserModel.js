@@ -111,4 +111,12 @@ module.exports={
             conn.release();
         })
     },
+    agreement:function(req,res){
+        if(req.session.loginbean!=undefined){
+            res.render('zpagreement',{loginbean:req.session.loginbean})
+        }else{
+            res.render('zpagreement')
+        }
+       
+    }
 }

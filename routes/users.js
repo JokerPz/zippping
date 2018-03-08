@@ -68,4 +68,8 @@ router.post('/zhuce',function(req,res){
   userModel.zhuce(req,res);
   //res.send('注册')
 })
+
+router.get('/agreement',function(req,res){
+  userModel.agreement(req,res)
+})
 module.exports = router;
