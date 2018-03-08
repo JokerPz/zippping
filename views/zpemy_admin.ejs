@@ -12,7 +12,7 @@
             <br>
 
             <label for="place" style="color: #6c2393;">活动地点</label>
-            <input type="text" name="place" id="place" class="place-box" required pattern="^.{1,20}$" placeholder="线下活动必填" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
+            <input type="text" name="place" id="place" class="place-box" pattern="^.{0,20}$" placeholder="线下活动必填" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
 
             <label for="trade" style="margin-left: 66px;color: #6c2393;">所处行业<label class="required">*</label></label>
             <select name="business" id="trade" class="trade-select" required oninvalid="setCustomValidity('请选择所处行业')" oninput="setCustomValidity('')">
@@ -80,7 +80,7 @@
                     </td>
 
                     <td>
-                        <textarea class="content" id="content" name="content" required pattern="^.{1,1000}$" oninvalid="setCustomValidity('请控制在1000字以内')" oninput="setCustomValidity('')"></textarea>
+                        <textarea class="content" id="content" name="content" required pattern="^.{1,2500}$" oninvalid="setCustomValidity('请控制在2500字以内')" oninput="setCustomValidity('')"></textarea>
                     </td>
                 </tr>
             </table>
