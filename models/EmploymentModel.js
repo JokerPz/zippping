@@ -27,7 +27,7 @@ module.exports={
             conn.query(userAddSql,param,function(err,rs){
                 if(err){
                     console.log('insert err:',err.message);
-                    res.send('<script>alert("操作异常，请重新操作");history.back();</script>')
+                    res.send('<script>alert("字数超出要求，请重新操作");history.back();</script>')
                     return;
                 }
                 res.send('<script>alert("已提交审核");location.href="../";</script>');
