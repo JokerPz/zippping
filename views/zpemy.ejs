@@ -80,8 +80,8 @@
             
             <br>
     
-            <label for="place" style="color: #6c2393;">活动地点<label class="required">*</label></label>
-            <input type="text" name="place" id="place" class="place-box" pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
+            <label for="place" style="color: #6c2393;">活动地点</label>
+            <input type="text" name="place" id="place" class="place-box" pattern="^.{1,20}$" placeholder="线下活动必填" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
     
             <label for="trade" style="margin-left: 33px;color: #6c2393;">所处行业<label class="required">*</label></label>
             <select name="business" id="trade" class="trade-select" required oninvalid="setCustomValidity('请选择所处行业')" oninput="setCustomValidity('')">
@@ -103,7 +103,7 @@
             <input type="radio" id="type2" name="type" style="margin-left: 30px;vertical-align:middle;" value="1">
             <label style="font-size:12px;vertical-align:middle;">线下<label>
     
-            <label for="year" style="margin-left: 171px;color: #6c2393;">活动时间</label>
+            <label for="year" style="margin-left: 171px;color: #6c2393;">活动时间/截止时间<label class="required">*</label></label>
     
 	        <input type="text" name="date" id="datepicker" style="padding-left: 5px;margin-left:15px;vertical-align:middle;font-size: 12px;color: #515151;width: 93px;border: 1px solid #AEAEAE;height: 16px;"onclick="noChoose();">
 
@@ -157,11 +157,11 @@
             <hr class="hr2" style="margin-bottom: 23px;">
 
             <label style="color: #6c2393;">联系方式</label>
-            <label style="color: #515151;margin-left: 15px">名称<label class="required">*</label></label>
-            <input type="text" name="name" id="name" class="contact-box" required pattern="^.{1,15}$" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
+            <label style="color: #515151;margin-left: 15px">名称</label>
+            <input type="text" name="name" id="name" class="contact-box" pattern="^.{1,15}$" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
 
-            <label style="color: #515151;margin-left: 45px">电话<label class="required">*</label></label>
-            <input type="text" name="phone" id="name" class="contact-box" required pattern="^[0-9]{1,15}$" oninvalid="setCustomValidity('请输入正确的电话或手机号码')" oninput="setCustomValidity('')">
+            <label style="color: #515151;margin-left: 45px">电话</label>
+            <input type="text" name="phone" id="name" class="contact-box" pattern="^[0-9]{1,15}$" oninvalid="setCustomValidity('请输入正确的电话或手机号码')" oninput="setCustomValidity('')">
 
             <label style="color: #515151;margin-left: 45px">邮箱</label>
             <input type="email" name="email" id="name" class="email-box" pattern="^{1,30}$" oninvalid="setCustomValidity('请输入正确的邮箱')" oninput="setCustomValidity('')">
@@ -169,10 +169,10 @@
             <br>
 
             <label style="color: #515151;margin-left: 67px">微信</label>
-            <input type="text" name="wechat" id="name" class="contact-box" style="margin-left: 12px;" pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
+            <input type="text" name="wechat" id="name" class="contact-box" pattern="^.{1,20}$" oninvalid="setCustomValidity('请控制在20字以内')" oninput="setCustomValidity('')">
 
             <label style="color: #515151;margin-left: 45px">QQ</label>
-            <input type="text" name="QQ" id="name" class="contact-box"  style="margin-left: 19px;" pattern="^.{1,15}$" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
+            <input type="text" name="QQ" id="name" class="contact-box" pattern="^.{1,15}$" style="margin-left: 11px;" oninvalid="setCustomValidity('请控制在15字以内')" oninput="setCustomValidity('')">
 
             <br>
 

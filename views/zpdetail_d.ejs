@@ -64,24 +64,15 @@
 			<td class="title">联系方式</td>
 			<td class="name">名称：<%= rs[0].name%></td>
 			<td class="contact">电话：<%= rs[0].phone%></td>
-			<td class="contact">邮箱：
-			<% if(rs[0].email){%>
-				<%= rs[0].email%>
-			<% } %>
+			<td class="contact">邮箱：<%= rs[0].email%>
 			</td>
 		</tr>
 
 		<tr>
 			<td class="title"></td>
-			<td class="name">微信：
-			<% if(rs[0].wechat){%>
-				<%= rs[0].wechat%>
-			<% } %>
+			<td class="name">微信：<%= rs[0].wechat%>
 			</td>
-			<td class="contact">QQ：
-			<% if(rs[0].QQ){%>
-				<%= rs[0].QQ%>
-			<% } %>
+			<td class="contact">QQ：<%= rs[0].QQ%>
 			</td>
 		</tr>
 		<!--需要修改  需要验证-->	
