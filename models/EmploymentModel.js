@@ -4,9 +4,13 @@ var async=require('async')
 var moment = require('moment')
 module.exports={
     emy:function(req,res){//发帖操作
+        console.log('date:'+req.body['date'])
         var year = moment(req.body['date']).format('YYYY');
         var month = moment(req.body['date']).format('MM')
         var day = moment(req.body['date']).format('DD');
+        console.log("year:"+year)
+        console.log('month:'+month)
+        console.log('day:'+day)
         var e_type;
         if( req.body['type']==0){
             e_type='线上'
@@ -476,7 +480,7 @@ module.exports={
                 }
                 if(req.session.loginbean!=undefined){
                     var sqldetail='SELECT e.tid,e.title,e.content,e.place,e.business,e.type,e.year,e.month,e.day,e.hour,e.minute,e.name,e.phone,e.email,e.wechat,e.QQ,e.updtime,e.createtime,c.cid FROM employment e LEFT JOIN collection c ON e.`tid`=c.`tid` AND c.uid= '+req.session.loginbean.id+' WHERE e.tid=? and e.uid ='+req.session.loginbean.id
-                    console.log('sqldetail'+sqldetail)
+                    console.log('sqldetail: '+sqldetail)
                 }else{
                     var sqldetail='SELECT e.tid,e.title,e.content,e.place,e.business,e.type,e.year,e.month,e.day,e.hour,e.minute,e.name,e.phone,e.email,e.wechat,e.QQ,e.updtime,e.createtime FROM employment e  WHERE e.tid=?'
                 }
@@ -489,9 +493,13 @@ module.exports={
                         return
                     }
                     if(rs[0]){
-                        res.render('zpdetail_d',{rs:rs,loginbean:req.session.loginbean})
+                        if(req.session.loginbean.privilige!=1){
+                            res.render('zpdetail_d',{rs:rs,loginbean:req.session.loginbean})
+                        }else{
+                            res.render('zpdetail_d_admin',{rs:rs,loginbean:req.session.loginbean})
+                        }
                     }else{
-                        res.send('Zippping')
+                        res.send('Zip11pping')
                     }
                     
                    

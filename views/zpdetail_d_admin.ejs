@@ -1,0 +1,91 @@
+<% include zpheader_admin.ejs %>
+
+<div style="background-color: #fff;width: 1000px;height: 620px;margin: 0 auto;">
+
+	<div class="collection">
+		<ul>
+			<%if(loginbean!=undefined){%>
+				<li><div class="colectitle">收藏</div></li>
+				<%if(!rs[0].cid){%>
+				
+				<label  for="one-box" >         
+					<img style="margin-right:10px;" alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= rs[0].tid %>&rank=1&title=<%= rs[0].title %>&type=<%=rs[0].type %>&year=<%= rs[0].year%>&month=<%= rs[0].month %>&day=<%= rs[0].day%>&hour=<%= rs[0].hour %>&minute=<%= rs[0].minute%>&place=<%= rs[0].place%>&business=<%=rs[0].business%>&back=6';"> 
+				</label> 
+				<%}else{%>
+				<label  for="one-box" >         
+					<img style="margin-right:10px;" alt="初始" src="/images/Star_S_1.png" id="checkimg" onclick="window.location.href='/employment/collection/del?uid=<%= loginbean.id %>&tid=<%=rs[0].tid%>&back=6';"> 
+				</label>
+				<%} 
+			}else{%>
+				<li><div class="colectitle" style="background-color:#AEAEAE;">收藏</div></li>
+				<label  for="one-box" >         
+					<img style="margin-right:10px;" alt="初始" src="/images/Star_S_2.png" id="checkimg" onclick="black_star()"> 
+				</label>
+			<%}%>
+		</ul>
+	</div>
+	
+	<table style="padding-left: 50px;padding-top: 18px;">
+		<tr>
+			<td class="title">招聘主题</td>
+			<td class="text1"><%= rs[0].title%></td>
+			<td class="title">所处行业</td>
+			<td class="text2"><%= rs[0].business%></td>
+		</tr>
+
+		<tr>
+			<td class="title">活动地点</td>
+			<td class="text1"><%= rs[0].place%></td>
+			<td class="title">活动时间</td>
+			<td class="text2"><%= rs[0].year%>/<%= rs[0].month%>/<%= rs[0].day%>  <%= rs[0].hour%>:<%= rs[0].minute%></td>
+		</tr>
+
+		<tr>
+			<td class="title">活动类型</td>
+			<td class="text1"><%= rs[0].type%></td>
+			</tr>
+	</table>
+
+	<hr style="width: 900px;padding: 0 auto;background-color: #AEAEAE;height: 1px;border: none;">
+
+	<table style="padding-left: 50px;">
+		<tr>
+			<td class="title" valign="top">活动内容</td>
+			<td>
+			<textarea readonly><%- rs[0].content%></textarea>
+			</td>
+		</tr>
+	</table>
+
+	<hr style="width: 900px;padding: 0 auto;background-color: #AEAEAE;height: 1px;border: none;">
+	
+	<table style="padding-left: 50px;">
+		<tr>
+			<td class="title">联系方式</td>
+			<td class="name">名称：<%= rs[0].name%></td>
+			<td class="contact">电话：<%= rs[0].phone%></td>
+			<td class="contact">邮箱：<%= rs[0].email%>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="title"></td>
+			<td class="name">微信：<%= rs[0].wechat%>
+			</td>
+			<td class="contact">QQ：<%= rs[0].QQ%>
+			</td>
+		</tr>
+		<!--需要修改  需要验证-->	
+		<form method="post" action="/employment/delete?tid=<%=rs[0].tid %>"> 
+            <input type="hidden" name="status" value="3"/>
+            <input type="submit" value="删除" class="exam-gray">
+        </form>
+	</table>
+
+</div>
+<script src="/javascripts/alerts.js"></script>
+<script src="/javascripts/no.js"></script>
+<script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.slim.min.js"></script>
+</body>
+
+</html>

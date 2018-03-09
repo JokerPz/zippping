@@ -29,9 +29,6 @@
 				<% if(loginbean!=undefined){ %>
 					<% if(business==undefined){ %>
 					<ul>
-						<!-- <a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a> -->
 						<% if(!row['cid']){%>
 						<label  for="one-box" >           
 							<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0';">
@@ -45,9 +42,6 @@
 					</ul>
 					<% }else{%>
 					<ul>
-						<!-- <a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a> -->
 						<% if(!row['cid']){%>
 						<label  for="one-box" >           
 							<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1';">
