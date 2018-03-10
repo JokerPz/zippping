@@ -25,9 +25,6 @@
 				<% if(loginbean!=undefined){ %>
 					<% if(business==undefined){ %>
 					<ul>
-						<!-- <a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0"><li><div class="colec"></div></li></a> -->
 						<% if(!row['cid']){%>
 						<label  for="one-box" >           
 							<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=0';">
@@ -41,9 +38,6 @@
 					</ul>
 					<% }else{%>
 					<ul>
-						<!-- <a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=3&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=2&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a>
-						<a href="/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1"><li><div class="colec"></div></li></a> -->
 						<% if(!row['cid']){%>
 						<label  for="one-box" >           
 							<img  alt="初始" src="/images/Star_S_0.png" id="checkimg" onclick="window.location.href='/employment/collection?uid=<%= loginbean.id %>&tid=<%= row['tid'] %>&rank=1&page=<%=page %>&title=<%= row['title'] %>&type=<%= row['type'] %>&year=<%= row['year']%>&month=<%= row['month'] %>&day=<%= row['day'] %>&hour=<%= row['hour'] %>&minute=<%= row['minute']%>&place=<%= row['place']%>&business=<%= row['business']%>&back=1';">
@@ -74,19 +68,19 @@
 		<tr>
 		<%if(count!=0){%>
 			<% if(business==undefined){ %>
-				<td align="center" style="font-size:12px;color:#515151">
+				<td align="center" style="font-size:12px;color:#515151" >
 				总共<%=count%>记录
 				第<%=page%>/<%=countPage%>页&nbsp
 				
 				</td>
 				<td>
 				<% if (page!=1) { %>
-					<a href="/?page=1">首页</a>&nbsp
-					<a href="/?page=<%=(page-1)%>">上一页</a>&nbsp
+					<a href="/?page=1"  style="text-decoration:none;color:#xxxxxx">首页</a>&nbsp
+					<a href="/?page=<%=(page-1)%>" style="text-decoration:none;color:#xxxxxx">上一页</a>&nbsp
 				<% } 
 				if (page!=countPage) { %>
-				<a href="/?page=<%=(page+1)%>">下一页</a>&nbsp
-				<a href="/?page=<%=countPage%>">尾页</a>&nbsp
+				<a href="/?page=<%=(page+1)%>" style="text-decoration:none;color:#xxxxxx">下一页</a>&nbsp
+				<a href="/?page=<%=countPage%>" style="text-decoration:none;color:#xxxxxx">尾页</a>&nbsp
 				<% } %>
 				</td>
 			<% }else{%>
@@ -97,12 +91,12 @@
 				</td>
 				<td>
 				<% if (page!=1) { %>
-					<a href="/?page=1&business=<%=business%>">首页</a>&nbsp
-					<a href="/?page=<%=(page-1)%>&business=<%=business%>">上一页</a>&nbsp
+					<a href="/?page=1&business=<%=business%>"  style="text-decoration:none;color:#xxxxxx">首页</a>&nbsp
+					<a href="/?page=<%=(page-1)%>&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">上一页</a>&nbsp
 				<% } 
 				if (page!=countPage) { %>
-				<a href="/?page=<%=(page+1)%>&business=<%=business%>">下一页</a>&nbsp
-				<a href="/?page=<%=countPage%>&business=<%=business%>">尾页</a>&nbsp
+				<a href="/?page=<%=(page+1)%>&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">下一页</a>&nbsp
+				<a href="/?page=<%=countPage%>&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">尾页</a>&nbsp
 				<% } %>
 				</td>
 			<% }%>
