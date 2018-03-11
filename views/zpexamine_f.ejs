@@ -126,12 +126,12 @@
                     </td>
                     <td>
                     <% if (page!=1) { %>
-                        <a href="/?page=1&business=<%=business%>">首页</a>&nbsp
-                        <a href="/?page=<%=(page-1)%>&business=<%=business%>">上一页</a>&nbsp
+                        <a href="/?page=1&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">首页</a>&nbsp
+                        <a href="/?page=<%=(page-1)%>&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">上一页</a>&nbsp
                     <% } 
                     if (page!=countPage) { %>
-                    <a href="/?page=<%=(page+1)%>&business=<%=business%>">下一页</a>&nbsp
-                    <a href="/?page=<%=countPage%>&business=<%=business%>">尾页</a>&nbsp
+                    <a href="/?page=<%=(page+1)%>&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">下一页</a>&nbsp
+                    <a href="/?page=<%=countPage%>&business=<%=business%>" style="text-decoration:none;color:#xxxxxx">尾页</a>&nbsp
                     <% } %>
                     </td>
                 <% }%>
