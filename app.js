@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser()); 
 app.use(session({secret: 'recommand 128 bytes random string', // 建议使用 128 个字符的随机字符串    
-cookie: { maxAge: 40 * 60 * 1000 }, //cookie生存周期20*60秒改为40    
+cookie: { maxAge: 120 * 60 * 1000 }, //cookie生存周期20*60秒改为120分钟    
 resave: true,  //cookie之间的请求规则,假设每次登陆，就算会话存在也重新保存一次    
 saveUninitialized: true //强制保存未初始化的会话到存储器    
 }));  //这些是写在app.js里面的    
@@ -55,12 +55,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// use this middleware to reset cookie expiration time
-// when user hit page every time
-app.use(function(req, res, next){
-  req.session._garbage = Date();
-  req.session.touch();
-  next();
-});
+
 
 module.exports = app;
